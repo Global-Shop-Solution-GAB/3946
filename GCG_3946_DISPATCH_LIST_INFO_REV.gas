@@ -1,0 +1,2023 @@
+Program.Sub.ScreenSU.Start
+gui.F_WC..create
+gui.F_WC..caption("Dispatch List Details")
+gui.F_WC..size(30255,14565)
+gui.F_WC..minx(0)
+gui.F_WC..miny(0)
+gui.F_WC..position(0,0)
+gui.F_WC..event(unload,f_wc_unload)
+gui.F_WC..alwaysontop(False)
+gui.F_WC..fontname("Arial")
+gui.F_WC..fontsize(8)
+gui.F_WC..forecolor(0)
+gui.F_WC..fontstyle(False,False,False,False,)
+gui.F_WC..BackColor(-2147483633)
+gui.F_WC..controlbox(True)
+gui.F_WC..maxbutton(True)
+gui.F_WC..minbutton(True)
+gui.F_WC..mousepointer(0)
+gui.F_WC..moveable(True)
+gui.F_WC..sizeable(False)
+gui.F_WC..ShowInTaskBar(True)
+gui.F_WC..titlebar(True)
+gui.F_WC.lblSelect01.create(label,"Please select a Workcenter",True,2850,255,1,110,935,True,0,Arial,8,-2147483633,0)
+gui.F_WC.lblSelect01.defaultvalue("")
+gui.F_WC.lblSelect01.controlgroup(0)
+gui.F_WC.ddlWC.create(dropdownlist)
+gui.F_WC.ddlWC.visible(True)
+gui.F_WC.ddlWC.size(2250,330)
+gui.F_WC.ddlWC.zorder(0)
+gui.F_WC.ddlWC.position(100,1770)
+gui.F_WC.ddlWC.enabled(True)
+gui.F_WC.ddlWC.fontname("Arial")
+gui.F_WC.ddlWC.fontsize(8)
+gui.F_WC.ddlWC.event(click,ddlwc_click)
+gui.F_WC.ddlWC.defaultvalue("")
+gui.F_WC.ddlWC.controlgroup(0)
+gui.F_WC.lblSelect02.create(label,"Columns to be displayed:",True,3255,255,1,100,2785,True,0,Arial,8,-2147483633,0)
+gui.F_WC.lblSelect02.defaultvalue("")
+gui.F_WC.lblSelect02.controlgroup(0)
+gui.F_WC.chbx_ALL.create(checkbox)
+gui.F_WC.chbx_ALL.caption("All Columns")
+gui.F_WC.chbx_ALL.visible(True)
+gui.F_WC.chbx_ALL.size(1170,255)
+gui.F_WC.chbx_ALL.zorder(0)
+gui.F_WC.chbx_ALL.position(130,8785)
+gui.F_WC.chbx_ALL.enabled(True)
+gui.F_WC.chbx_ALL.alignment(0)
+gui.F_WC.chbx_ALL.fontname("Arial")
+gui.F_WC.chbx_ALL.fontsize(8)
+gui.F_WC.chbx_ALL.event(click,chbx_all_click)
+gui.F_WC.chbx_ALL.defaultvalue("")
+gui.F_WC.chbx_ALL.controlgroup(0)
+gui.F_WC.btnPrint.create(button)
+gui.F_WC.btnPrint.caption("Print")
+gui.F_WC.btnPrint.visible(True)
+gui.F_WC.btnPrint.size(1000,375)
+gui.F_WC.btnPrint.zorder(0)
+gui.F_WC.btnPrint.position(145,12675)
+gui.F_WC.btnPrint.enabled(True)
+gui.F_WC.btnPrint.fontname("Arial")
+gui.F_WC.btnPrint.fontsize(8)
+gui.F_WC.btnPrint.event(click,btnprint_click)
+gui.F_WC.btnPrint.defaultvalue("")
+gui.F_WC.btnPrint.controlgroup(0)
+gui.F_WC.btnRefresh.create(button)
+gui.F_WC.btnRefresh.caption("Refresh")
+gui.F_WC.btnRefresh.visible(True)
+gui.F_WC.btnRefresh.size(1000,375)
+gui.F_WC.btnRefresh.zorder(0)
+gui.F_WC.btnRefresh.position(160,9230)
+gui.F_WC.btnRefresh.enabled(True)
+gui.F_WC.btnRefresh.fontname("Arial")
+gui.F_WC.btnRefresh.fontsize(8)
+gui.F_WC.btnRefresh.event(click,btnrefresh_click)
+gui.F_WC.btnRefresh.defaultvalue("")
+gui.F_WC.btnRefresh.controlgroup(0)
+gui.F_WC.Frame_DJL.create(frame)
+gui.F_WC.Frame_DJL.caption("Dispatch Job List")
+gui.F_WC.Frame_DJL.visible(True)
+gui.F_WC.Frame_DJL.size(27270,13785)
+gui.F_WC.Frame_DJL.zorder(0)
+gui.F_WC.Frame_DJL.position(2675,110)
+gui.F_WC.Frame_DJL.enabled(True)
+gui.F_WC.Frame_DJL.fontname("Arial")
+gui.F_WC.Frame_DJL.fontsize(8)
+gui.F_WC.gsfg_DJL.create(gsflexgrid)
+gui.F_WC.gsfg_DJL.FixedRows(0)
+gui.F_WC.gsfg_DJL.FixedCols(0)
+gui.F_WC.gsfg_DJL.visible(True)
+gui.F_WC.gsfg_DJL.size(27075,13440)
+gui.F_WC.gsfg_DJL.zorder(0)
+gui.F_WC.gsfg_DJL.position(2750,300)
+gui.F_WC.gsfg_DJL.enabled(True)
+gui.F_WC.lblRefreshTime.create(label,"Time Last Refreshed:",True,1935,255,1,100,11260,True,0,Arial,8,-2147483633,0)
+gui.F_WC.lblRefreshTime.defaultvalue("")
+gui.F_WC.lblRefreshTime.controlgroup(0)
+gui.F_WC.txtRefreshTime.create(textbox,"",True,1545,300,0,105,11535,True,0,Arial,8,-2147483643,1)
+gui.F_WC.txtRefreshTime.defaultvalue("")
+gui.F_WC.txtRefreshTime.controlgroup(0)
+gui.F_WC.chkWorkgroup.create(checkbox)
+gui.F_WC.chkWorkgroup.caption("Workgroup")
+gui.F_WC.chkWorkgroup.visible(True)
+gui.F_WC.chkWorkgroup.size(1935,255)
+gui.F_WC.chkWorkgroup.zorder(0)
+gui.F_WC.chkWorkgroup.position(200,530)
+gui.F_WC.chkWorkgroup.enabled(True)
+gui.F_WC.chkWorkgroup.alignment(0)
+gui.F_WC.chkWorkgroup.fontname("Arial")
+gui.F_WC.chkWorkgroup.fontsize(8)
+gui.F_WC.chkWorkgroup.event(click,chkworkgroup_click)
+gui.F_WC.chkWorkgroup.defaultvalue("")
+gui.F_WC.chkWorkgroup.controlgroup(0)
+gui.F_WC.chkWorkcenter.create(checkbox)
+gui.F_WC.chkWorkcenter.caption("Workcenter")
+gui.F_WC.chkWorkcenter.visible(True)
+gui.F_WC.chkWorkcenter.size(1935,255)
+gui.F_WC.chkWorkcenter.zorder(0)
+gui.F_WC.chkWorkcenter.position(200,200)
+gui.F_WC.chkWorkcenter.enabled(True)
+gui.F_WC.chkWorkcenter.alignment(0)
+gui.F_WC.chkWorkcenter.fontname("Arial")
+gui.F_WC.chkWorkcenter.fontsize(8)
+gui.F_WC.chkWorkcenter.event(click,chkworkcenter_click)
+gui.F_WC.chkWorkcenter.defaultvalue("")
+gui.F_WC.chkWorkcenter.controlgroup(0)
+gui.F_WC.gsfg_columns.create(gsflexgrid)
+gui.F_WC.gsfg_columns.FixedRows(0)
+gui.F_WC.gsfg_columns.FixedCols(0)
+gui.F_WC.gsfg_columns.visible(True)
+gui.F_WC.gsfg_columns.size(2505,5385)
+gui.F_WC.gsfg_columns.zorder(0)
+gui.F_WC.gsfg_columns.position(100,3100)
+gui.F_WC.gsfg_columns.enabled(True)
+gui.F_WC.timer.create(timer)
+gui.F_WC.timer.interval(300000)
+gui.F_WC.timer.position(2500,8100)
+gui.F_WC.timer.enabled(True)
+gui.F_WC.timer2.create(timer)
+gui.F_WC.timer2.interval(600000)
+gui.F_WC.timer2.position(2500,8200)
+gui.F_WC.timer2.enabled(True)
+gui.F_WC.timer2.event(timer,timer2_timer)
+gui.F_WC.timer3.create(timer)
+gui.F_WC.timer3.interval(0)
+gui.F_WC.timer3.position(2300,6600)
+gui.F_WC.timer3.enabled(True)
+gui.F_WC.DisableChk.create(checkbox)
+gui.F_WC.DisableChk.caption("Disable Auto Refresh")
+gui.F_WC.DisableChk.visible(True)
+gui.F_WC.DisableChk.size(1935,255)
+gui.F_WC.DisableChk.zorder(0)
+gui.F_WC.DisableChk.position(105,11980)
+gui.F_WC.DisableChk.enabled(True)
+gui.F_WC.DisableChk.alignment(0)
+gui.F_WC.DisableChk.fontname("Arial")
+gui.F_WC.DisableChk.fontsize(8)
+gui.F_WC.DisableChk.event(click,disablechk_click)
+gui.F_WC.DisableChk.defaultvalue("")
+gui.F_WC.DisableChk.controlgroup(0)
+gui.F_WC.lbl5.create(label,"or Workgroup",True,1935,255,1,100,1200,True,0,Arial,8,-2147483633,0)
+gui.F_WC.lbl5.defaultvalue("")
+gui.F_WC.lbl5.controlgroup(0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.UDT.DETAILS.Define("WORKORDER",String,WORKORDER)
+Variable.UDT.DETAILS.Define("DESCRIPTION",String)
+Variable.UDT.DETAILS.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.DETAILS.Define("SEQ_START",String,SEQ_START)
+Variable.UDT.DETAILS.Define("SEQ_DUE",String,SEQ_DUE)
+Variable.UDT.DETAILS.Define("JOB_DUE",String)
+Variable.UDT.DETAILS.Define("PART",String)
+Variable.UDT.DETAILS.Define("JOB",String,JOB)
+Variable.UDT.DETAILS.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.DETAILS.Define("WORKGROUP",String)
+Variable.UDT.DETAILS.Define("NEW",String)
+Variable.UDT.DETAILS.Define("HOURS_COMPLETED",Float)
+Variable.UDT.DETAILS.Define("ACTIVE",String)
+Variable.UDT.DETAILS.Define("MAN_HOURS",Float)
+Variable.UDT.DETAILS.Define("PERCENT_COMPLETE",Float)
+Variable.UDT.DETAILS.Define("TOTAL_HOURS",Float)
+Variable.UDT.DETAILS.Define("USER_OPTION",String)
+Variable.UDT.DETAILS.Define("SETUP",Float)
+Variable.UDT.DETAILS.Define("SEQUENCE",String,SEQUENCE)
+Variable.UDT.DETAILS.Define("HOURS_ACTUAL",Float)
+Variable.UDT.DETAILS.Define("HOURS_ESTIMATED",Float)
+Variable.UDT.DETAILS.Define("HOURS_REMAINING",String)
+Variable.UDT.DETAILS.Define("INDIRECT_SEQ",String)
+Variable.UDT.DETAILS.Define("QTY_ORIGINAL",Float)
+Variable.UDT.DETAILS.Define("QTY_REMAINING",Float)
+Variable.UDT.DETAILS.Define("UNITS",String)
+Variable.UDT.DETAILS.Define("EMPLOYEE_NAME",String)
+Variable.UDT.DETAILS.Define("CODE_SORT_OPER",String)
+Variable.uGlobal.uDETAILS.Declare("DETAILS")
+
+Variable.UDT.DetailsCopy.Define("WORKORDER",String,WORKORDER)
+Variable.UDT.DetailsCopy.Define("DESCRIPTION",String,DESCRIPTION)
+Variable.UDT.DetailsCopy.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.DetailsCopy.Define("SEQ_START",String,SEQ_START)
+Variable.UDT.DetailsCopy.Define("SEQ_DUE",String,SEQ_DUE)
+Variable.UDT.DetailsCopy.Define("JOB_DUE",String,JOB_DUE)
+Variable.UDT.DetailsCopy.Define("PART",String,PART)
+Variable.UDT.DetailsCopy.Define("JOB",String,JOB)
+Variable.UDT.DetailsCopy.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.DetailsCopy.Define("WORKGROUP",String)
+Variable.UDT.DetailsCopy.Define("NEW",String)
+Variable.UDT.DetailsCopy.Define("ACTIVE",String)
+Variable.UDT.DetailsCopy.Define("HOURS_COMPLETED",Float)
+Variable.UDT.DetailsCopy.Define("MAN_HOURS",Float)
+Variable.UDT.DetailsCopy.Define("PERCENT_COMPLETE",Float)
+Variable.UDT.DetailsCopy.Define("TOTAL_HOURS",Float)
+Variable.UDT.DetailsCopy.Define("USER_OPTION",String)
+Variable.UDT.DetailsCopy.Define("SETUP",Float)
+Variable.UDT.DetailsCopy.Define("SEQUENCE",String,SEQUENCE)
+Variable.UDT.DetailsCopy.Define("HOURS_ACTUAL",Float)
+Variable.UDT.DetailsCopy.Define("HOURS_ESTIMATED",Float)
+Variable.UDT.DetailsCopy.Define("HOURS_REMAINING",String)
+Variable.UDT.DetailsCopy.Define("INDIRECT_SEQ",String)
+Variable.UDT.DetailsCopy.Define("QTY_ORIGINAL",Float)
+Variable.UDT.DetailsCopy.Define("QTY_REMAINING",Float)
+Variable.UDT.DetailsCopy.Define("EMPLOYEE_NAME",String)
+Variable.UDT.DetailsCopy.Define("UNITS",String)
+Variable.UDT.DetailsCopy.Define("CODE_SORT_OPER",String)
+Variable.uGlobal.uDetailsCopy.Declare("DetailsCopy")
+
+Variable.Global.sQuery.Declare(String)
+Variable.Global.iStyle.Declare(Long,-1)
+Variable.UDT.uColumns.Define("sWO",String,sWO)
+Variable.UDT.uColumns.Define("sWOSeq",String,sWOSeq)
+Variable.UDT.uColumns.Define("sPart",String,sPart)
+Variable.UDT.uColumns.Define("sSeqStart",String,sSeqStart)
+Variable.UDT.uColumns.Define("sSeqDue",String,sSeqDue)
+Variable.UDT.uColumns.Define("sJobDue",String,sJobDue)
+Variable.UDT.uColumns.Define("sEmpName",String,sEmpName)
+Variable.UDT.uColumns.Define("sJobDesc",String,sJobDesc)
+Variable.UDT.uColumns.Define("sWC",String,sWC)
+Variable.UDT.uColumns.Define("sRemQty",String,sRemQty)
+Variable.UDT.uColumns.Define("sOrigQty",String,sOrigQty)
+Variable.UDT.uColumns.Define("sActive",String,sActive)
+Variable.UDT.uColumns.Define("sSetup",String,sSetup)
+Variable.UDT.uColumns.Define("sManHrs",String,sManHrs)
+Variable.UDT.uColumns.Define("sTotalHrs",String,sTotalHrs)
+Variable.UDT.uColumns.Define("sEstHrs",String,sEstHrs)
+Variable.UDT.uColumns.Define("sPercComp",String,sPercComp)
+Variable.UDT.uColumns.Define("sUserField10",String,sUserField10)
+Variable.UDT.uColumns.Define("sRuntime",String,sRuntime)
+Variable.UDT.uColumns.Define("sCodeSortOper",String,sCodeSortOper)
+Variable.uGlobal.uColumns.Declare("uColumns")
+Variable.UDT.uWGWC.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.uWGWC.Define("WORKGROUP",String,WORKGROUP)
+Variable.uGlobal.uWGWC.Declare("uWGWC")
+Variable.UDT.uWGWCCopy.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.uWGWCCopy.Define("WORKGROUP",String,WORKGROUP)
+Variable.UDT.uWG.Define("WORKGROUP",String,WORKGROUP)
+Variable.UDT.uWG.Define("WORKCENTER",String,WORKCENTER)
+Variable.uGlobal.uWGWCCopy.Declare("uWGWCCopy")
+Variable.UDT.uEMPLOYEE.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.uEMPLOYEE.Define("STATION",String,STATION)
+Variable.UDT.uEMPLOYEE.Define("EMPLOYEE",String,EMPLOYEE)
+Variable.UDT.uEMPLOYEE.Define("EMP_INITIALS",String,EMP_INITIALS)
+Variable.UDT.uEMPLOYEE.Define("INDIRECT",String,INDIRECT)
+Variable.uGlobal.uEMPLOYEE.Declare("uEMPLOYEE")
+
+Variable.Global.iRefreshCount.Declare(Long,0)
+Variable.UDT.uDispatch.Define("JOB",String,JOB)
+Variable.UDT.uDispatch.Define("SFX",String,SFX)
+Variable.UDT.uDispatch.Define("SEQ",String,SEQ)
+Variable.uGlobal.uDispatch.Declare("uDispatch")
+Variable.UDT.uAPSV3_LINES.Define("JOB",String,JOB)
+Variable.UDT.uAPSV3_LINES.Define("SUFFIX",String,SUFFIX)
+Variable.UDT.uAPSV3_LINES.Define("SEQUENCE",String,SEQUENCE)
+Variable.UDT.uAPSV3_LINES.Define("WORKORDER",String,WORKORDER)
+Variable.UDT.uAPSV3_LINES.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.uAPSV3_LINES.Define("SEQ_START",String,SEQ_START)
+Variable.UDT.uAPSV3_LINES.Define("SEQ_DUE",String,SEQ_DUE)
+Variable.uGlobal.uAPSV3_LINES.Declare("uAPSV3_LINES")
+Variable.UDT.uWC.Define("WORKCENTER",String,WORKCENTER)
+Variable.UDT.uWC.Define("WORKGROUP",String,WORKGROUP)
+Variable.uGlobal.uWORKCENTER.Declare("uWC")
+Variable.uGlobal.uWC.Declare("uWC")
+Variable.uGlobal.uWG.Declare("uWG")
+Program.Sub.Preflight.End
+
+program.sub.f_wc_unload.start
+F.Intrinsic.Control.SetErrorHandler("f_wc_unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sMessReturn.Declare
+F.Intrinsic.UI.Msgbox("Are you sure you want to close this program?","Exit Custom Dispatch List",1,V.Local.sMessReturn)
+F.Intrinsic.Control.If(V.Local.sMessReturn,=,2)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!Conx.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("f_wc_unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.f_wc_unload.end
+
+program.sub.ddlwc_click.start
+F.Intrinsic.Control.SetErrorHandler("ddlwc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ddlwc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.ddlwc_click.end
+
+program.sub.chbx_all_click.start
+F.Intrinsic.Control.SetErrorHandler("chbx_all_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.irow.Declare(Long)
+V.Local.scheck.Declare(String)
+V.Local.icount.Declare(String)
+V.Local.scolumn.Declare(String)
+V.Local.icount2.Declare(Long)
+
+'set the variable with the number of rows in the flexgrid
+V.Local.irow.Set(V.Screen.F_WC!gsfg_columns.Rows)
+
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.irow,1,V.Local.irow)
+
+'if the include all checkbox is checked, include all columns
+F.Intrinsic.Control.If(V.Screen.F_WC!chbx_ALL.Value,=,1)
+
+	'loop through the flexgrid
+	F.Intrinsic.Control.For(V.Local.icount,4,V.local.irow,1)
+		'save the value of the checkbox to the variable
+		Gui.F_WC.gsfg_columns.GetTextMatrix(1,V.Local.icount,V.Local.scheck)
+		'check to see if the box is checked or not checked
+		F.Intrinsic.Control.If(V.Local.scheck,=,0)
+			Gui.F_WC.gsfg_columns.TextMatrix(1,V.Local.icount,1)
+		
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.icount)
+
+F.Intrinsic.Control.Elseif(V.Screen.F_WC!chbx_ALL.Value,=,0)
+
+	'loop through the flexgrid
+	F.Intrinsic.Control.For(V.Local.icount2,4,V.local.irow,1)
+		'save the value of the checkbox to the variable
+		Gui.F_WC.gsfg_columns.GetTextMatrix(1,V.Local.icount2,V.Local.scheck)
+		'check to see if the box is checked or not checked
+		F.Intrinsic.Control.If(V.Local.scheck,=,1)
+			Gui.F_WC.gsfg_columns.TextMatrix(1,V.Local.icount2,0)
+
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Next(V.Local.icount2)
+
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chbx_all_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chbx_all_click.end
+
+program.sub.btnprint_click.start
+F.Intrinsic.Control.SetErrorHandler("btnprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sdestination.Declare(String)
+V.Local.itoprow.Declare(Long)
+V.Local.itopfg.Declare(Long)
+V.Local.stopreturn.Declare(String)
+V.Local.stopreturn2.Declare(String)
+V.Local.itopcolumncount.Declare(Long)
+V.Local.itoprowcount.Declare(Long)
+V.Local.ibotfg.Declare(Long)
+V.Local.ibotrow.Declare(Long)
+V.Local.sbotreturn.Declare(String)
+V.Local.sbotreturn2.Declare(String)
+V.Local.stotalreturn.Declare(String)
+
+V.Local.itoprowcount.Set(1)
+
+F.Intrinsic.UI.ShowSaveFileDialog("","",V.Local.sdestination)
+
+'get the rows from the top flexgrid
+V.Local.itoprow.Set(V.Screen.F_WC!gsfg_DJL.Rows)
+
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.itoprow,1,V.Local.itoprow)
+
+'loop through the flexgrid
+F.Intrinsic.Control.For(V.Local.itopfg,0,V.local.itoprow,1)
+	'read the row
+	Gui.F_WC.gsfg_DJL.ReadRow(V.Local.itopfg,V.Local.stopreturn)
+
+	'if stopreturn 2 is blank build the string with "$!$" for a new line
+	F.Intrinsic.Control.If(V.Local.stopreturn2,=,"")
+		V.Local.stopreturn2.Set(V.Local.stopreturn)
+		F.intrinsic.String.Build("{0}{1}",V.Local.stopreturn2,"$!$",V.Local.stopreturn2)
+
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}{1}{2}",V.Local.stopreturn2,V.Local.stopreturn,"$!$",V.Local.stopreturn2)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.local.itopfg)
+
+F.Automation.MSExcel.WriteSpreadsheet(V.Local.sdestination,V.Local.stopreturn2)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("btnprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.btnprint_click.end
+
+program.sub.btnrefresh_click.start
+F.Intrinsic.Control.SetErrorHandler("btnrefresh_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.irow.Declare(Long)
+V.Local.scheck.Declare(String)
+V.Local.icount.Declare(Long)
+V.Local.icount2.Declare(Long)
+V.Local.icount3.Declare(Long)
+V.Local.icount4.Declare(Long)
+V.Local.stime.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sname.Declare(String)
+V.Local.sref.Declare(String)
+V.Local.sref2.Declare(String)
+V.Local.sreftitles.Declare(String)
+V.Local.ititlecount.Declare(Long)
+V.Local.ititlecount2.Declare(Long)
+V.Local.iempcount.Declare(Long)
+V.Local.scolumn.Declare(String)
+V.Local.scolumn2.Declare(String)
+V.Local.iRows.Declare(Long)
+V.Local.squery.Declare(String)
+V.Local.squery2.Declare(String)
+V.Local.squery3.Declare(String)
+V.Local.squery4.Declare(String)
+V.Local.squery5.Declare(String)
+V.Local.squery6.Declare(String)
+V.Local.sfinalquery.Declare(String)
+V.Local.idetailscount.Declare(Long)
+V.Local.sdetailsreturn.Declare(String)
+V.Local.sdetailsreturn2.Declare(String)
+V.Local.sdetailsreturn3.Declare(String)
+V.Local.icolorcount.Declare(Long)
+V.Local.icolorrow.Declare(Long)
+V.Local.scolorret.Declare(String)
+V.Local.scolorret2.Declare(String)
+V.Local.idetailcols.Declare(Long)
+V.Local.sworkorder.Declare(String)
+V.Local.sjob.Declare(String)
+V.Local.sjob2.Declare(String)
+V.Local.ssuff.Declare(String)
+V.Local.ssuff2.Declare(String)
+V.local.suser.declare(String)
+V.Local.sdatetimeret.Declare(String)
+V.Local.sstarttime.Declare(String)
+V.Local.sstartdate.Declare(String)
+V.Local.itimeret.Declare(Float)
+V.Local.idateret.Declare(Float)
+V.Local.fmanhours.Declare(Float)
+V.Local.sactual.Declare(String)
+V.Local.sactualhrs.Declare(String)
+V.Local.itotalhrs.Declare(Float)
+V.Local.spercomp.Declare(String)
+V.Local.sactive.Declare(String)
+V.Local.iesttime.Declare(Float)
+V.Local.igreencount.Declare(Long)
+V.Local.iudtcount.Declare(Long)
+V.Local.ssequence.Declare(String)
+V.Local.ssequence2.Declare(String)
+V.Local.sworkcenter.Declare(String)
+V.Local.sworkcenter2.Declare(String)
+V.Local.igreenrow.Declare(Long)
+V.Local.sgreencolor.Declare(String)
+V.Local.irow2.Declare(Long)
+V.Local.icolorcount2.Declare(Long)
+V.Local.visiblecount.Declare(Long)
+V.Local.stylerquery.Declare(String)
+V.Local.stylerquery2.Declare(String)
+V.Local.stylerquery3.Declare(String)
+V.Local.stylerquery4.Declare(String)
+V.Local.stylerquery5.Declare(String)
+V.Local.stylerfinalquery.Declare(String)
+V.Local.iwgcount.Declare(Long)
+V.Local.wgquery.Declare(String)
+V.local.splaceholderWC.Declare(String)
+V.Local.icoloredcount.Declare(Long)
+V.Local.sredret.Declare(String)
+V.Local.iredcolumncount.Declare(Long)
+V.Local.iredcount2.Declare(Long)
+V.Local.ilines.Declare(Long)
+V.Local.iflag.Declare(Long)
+V.Local.iremain.Declare(Long)
+
+'set the color variables
+V.Local.igreen.Declare(Long)
+F.Intrinsic.UI.RGB(0,255,0,V.Local.igreen)
+V.Local.iorange.Declare(Long)
+F.Intrinsic.UI.RGB(255,128,0,V.Local.iorange)
+V.Local.ired.Declare(Long)
+V.Local.ired.Set(V.Color.SEC-GSS-07)
+V.Local.iblack.Declare(Long)
+F.Intrinsic.UI.RGB(0,0,0,V.Local.iblack)
+
+V.Local.icount3.Set(0)
+Gui.F_WC.timer2.Enabled(false)
+
+'if the drop down list is blank when the user refreshes throw up a warning
+F.Intrinsic.Control.If(V.Screen.F_WC!ddlWC.Text,=,"")
+	Function.Intrinsic.UI.Msgbox("Please select a Workcenter or Workgroup")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'invoke the wait dialog
+F.Intrinsic.UI.InvokeWaitDialog("Loading...","Please Wait")
+
+F.intrinsic.Control.CallSub(Flexgridstyles)
+Gui.F_WC.gsfg_DJL.Visible(false)
+
+'make a copy of the uDETAILS UDT to compare against
+F.Intrinsic.Variable.UDTCopy(V.uGlobal.uDETAILS,V.uGlobal.uDetailsCopy,False)
+
+'redim the uDETAILS UDT to get ready to store new data
+V.uGlobal.uDETAILS.Redim(0,0)
+V.uGlobal.uDispatch.Redim(0,0)
+
+F.Intrinsic.String.Concat("SELECT APSV3_JBLines.Job as JOB, APSV3_JBLines.Sfx as SUFFIX, APSV3_JBLines.Seq as SEQUENCE, CONCAT( APSV3_JBLines.Job, CONCAT('-',APSV3_JBLines.Sfx)) as WORKORDER, APSV3_JBLines.SeqRes as WORKCENTER,","APSV3_JBLines.StartDate  as SEQ_START, APSV3_JBLines.DueDate as SEQ_DUE, APSV3_JBLines.ComplDate from APSV3_JBLines",V.Local.stylerquery)
+F.Intrinsic.String.Build(" WHERE APSV3_JBLines.ComplDate is null and APSV3_JBLines.SeqRes ='{0}'",V.screen.F_WC!ddlWC.text,V.local.stylerquery2)
+
+F.Intrinsic.Control.If(V.Global.isort,=,1)
+	F.Intrinsic.String.concat(" ORDER BY APSV3_JBLines.StartDate desc, APSV3_JBLines.DueDate, APSV3_JBLines.Job,"," APSV3_JBLines.Sfx, APSV3_JBLines.Seq",V.Local.stylerquery3)
+F.Intrinsic.Control.ElseIf(V.Global.isort,<>,1)
+	F.Intrinsic.String.concat(" ORDER BY APSV3_JBLines.StartDate, APSV3_JBLines.DueDate, APSV3_JBLines.Job,"," APSV3_JBLines.Sfx, APSV3_JBLines.Seq",V.Local.stylerquery3)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("{0}{1}{2}",V.local.stylerquery,V.local.stylerquery2,V.local.stylerquery3,V.local.stylerquery4)
+
+F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery",V.local.stylerquery4)
+F.Intrinsic.Control.If(V.ODBC.conx!rstTylerQuery.EOF,<>,True)
+	'load the UDT with the information pulled form the query
+	F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rstTylerQuery","uGlobal.uDETAILS","false",1)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstTylerQuery.Close
+
+'if the workcenter checkbox is checked than populate the DETAILS UDT accordingly
+F.Intrinsic.Control.If(V.Screen.F_WC!chkWorkcenter.Value,=,1)
+
+	F.Intrinsic.Control.For(V.Local.iudtcount,V.uGlobal.uDETAILS.LBound,V.uGlobal.uDETAILS.UBound,1)
+
+		F.intrinsic.string.lpad(V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,"0",6,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE)
+		'call sub Seq_ready to see if this seq is ready passing our udt element we are on
+		F.Intrinsic.Control.CallSub(Seq_ready,"UDT",V.Local.iudtcount)
+		F.Intrinsic.Control.If(V.Args.Ready,=,True)
+
+			F.Intrinsic.string.Concat("SELECT APSV3_JBMaster.Description as DESCRIPTION,","APSV3_JBMaster.Part as PART, APSV3_JBMaster.DueDate as JOB_DUE",V.Local.stylerquery5)
+			F.intrinsic.string.build("{0} from APSV3_JBMaster where JOB = '{1}' and SFX = '{2}'",V.local.stylerquery5,V.uglobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.local.iudtcount)!SUFFIX,V.local.stylerquery5)
+
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery",V.local.stylerquery5)
+			F.Intrinsic.Control.If(V.ODBC.conx!rstTylerQuery.EOF,<>,True)
+		'
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!DESCRIPTION.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!DESCRIPTION)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!PART.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!PART)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB_DUE.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!JOB_DUE)
+
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rstTylerQuery.Close
+
+
+			F.Intrinsic.String.Concat("SELECT JOB_HEADER.JOB, JOB_HEADER.SUFFIX,","CONCAT(JOB_HEADER.JOB, CONCAT('-', JOB_HEADER.SUFFIX)) AS WORKORDER, JOB_HEADER.PART, JOB_HEADER.DESCRIPTION, JOB_HEADER.QTY_ORDER AS QTY_ORIGINAL, ",V.local.squery)
+			F.Intrinsic.String.Concat(" JOB_HEADER.QTY_COMPLETED, (JOB_HEADER.QTY_ORDER - JOB_HEADER.QTY_COMPLETED) AS QTY_REMAINING, ","JOB_HEADER.DATE_DUE AS JOB_DUE ",V.Local.squery2)
+			F.intrinsic.string.build("{0}{1} from JOB_HEADER where JOB = '{2}' and SUFFIX = '{3}'",V.local.squery,V.local.squery2,V.uglobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.local.iudtcount)!SUFFIX,V.local.squery3)
+
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery",V.local.squery3)
+
+'			F.Intrinsic.String.Concat("SELECT JOB_OPERATIONS.SEQ, CODE_SORT_OPER, JOB_OPERATIONS.UNITS, JOB_OPERATIONS.HOURS_ESTIMATED, JOB_OPERATIONS.HOURS_ACTUAL, (JOB_OPERATIONS.HOURS_ACTUAL - JOB_OPERATIONS.HOURS_ESTIMATED) AS"," HOURS_REMAINING, JOB_OPERATIONS.DATE_START AS SEQ_START, JOB_OPERATIONS.DATE_DUE AS SEQ_DUE",V.Local.squery)
+'			F.Intrinsic.String.Build("{0} from JOB_OPERATIONS where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery2)
+
+			F.Intrinsic.String.Concat("SELECT JOB_OPERATIONS.UNITS_OPEN,JOB_OPERATIONS.UNITS_COMPLETE, JOB_OPERATIONS.SEQ, CODE_SORT_OPER, JOB_OPERATIONS.UNITS, JOB_OPERATIONS.HOURS_ESTIMATED, JOB_OPERATIONS.HOURS_ACTUAL, (JOB_OPERATIONS.HOURS_ACTUAL - JOB_OPERATIONS.HOURS_ESTIMATED) AS"," HOURS_REMAINING, JOB_OPERATIONS.DATE_START AS SEQ_START, JOB_OPERATIONS.DATE_DUE AS SEQ_DUE",V.Local.squery)
+			F.Intrinsic.String.Build("{0} from JOB_OPERATIONS where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery2)
+
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery2",V.local.squery2)
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery2.EOF,<>,True)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!CODE_SORT_OPER.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!CODE_SORT_OPER)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!UNITS.Set(V.ODBC.Conx!rsttylerquery2.FieldValTrim!UNITS)
+
+
+'				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_COMPLETE)
+'				V.Local.iremain.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_OPEN)
+'				F.Intrinsic.Math.Sub(V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL,V.Local.iremain,V.Local.iremain)
+'				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_REMAINING.Set(V.Local.iremain)
+
+
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_OPEN)
+				V.Local.iremain.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_COMPLETE)
+				F.Intrinsic.Math.Sub(V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL,V.Local.iremain,V.Local.iremain)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_REMAINING.Set(V.Local.iremain)
+
+			F.Intrinsic.Control.EndIf
+
+			F.Intrinsic.String.Concat("SELECT JOBS_IN_PROCESS_G.WORKCENTER,"," JOBS_IN_PROCESS_G.EMPLOYEE",V.Local.squery)
+			F.Intrinsic.String.Build("{0} from JOBS_IN_PROCESS_G where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.local.squery2)
+
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery3",V.local.squery2)
+
+			F.Intrinsic.String.Build("SELECT JOBS_IN_PROCESS_G.INDIRECT, JOBS_IN_PROCESS_G.WORKCENTER, JOBS_IN_PROCESS_G.JOB, JOBS_IN_PROCESS_G.SUFFIX, JOBS_IN_PROCESS_G.SEQ, JOBS_IN_PROCESS_G.EMPLOYEE, EMPLOYEE_MSTR.NAME FROM JOBS_IN_PROCESS_G left join EMPLOYEE_MSTR on JOBS_IN_PROCESS_G.EMPLOYEE = EMPLOYEE_MSTR.EMPLOYEE where JOBS_IN_PROCESS_G.INDIRECT = '{0}' and JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'","D",V.uGlobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery)
+
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery4",V.Local.squery)
+
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery4.EOF,<>,True)
+				'loop through the uDETAILS UDT
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!EMPLOYEE_NAME.Set(V.ODBC.Conx!rstTylerQuery4.FieldValTrim!NAME)
+
+			F.Intrinsic.Control.EndIf
+
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery.EOF,<>,True)
+
+'				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_REMAINING.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!QTY_REMAINING)
+'				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!QTY_ORIGINAL)
+
+				'set the local job and suffix variables to use for queries later	
+				V.Local.sworkorder.Set(V.uGlobal.uDETAILS(v.Local.iudtcount)!WORKORDER)
+				F.Intrinsic.String.Split(V.Local.sworkorder,"-",V.Local.sworkorder)
+				V.Local.sjob.Set(V.Local.sworkorder(0))
+				V.Local.ssuff.Set(V.Local.sworkorder(1))
+
+				F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!EMPLOYEE_NAME,<>,"")
+					V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Set(V.ODBC.Conx!rstTylerQuery4.FieldValTrim!INDIRECT)
+				F.Intrinsic.Control.EndIf
+				'if INDIRECT_SEQ is equal to "D" set ACTIVE in the uDETAILS UDT to "ACTIVE"
+				F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Trim,=,"D")
+					V.uGlobal.uDETAILS(v.Local.iudtcount)!ACTIVE.Set("ACTIVE")
+				F.Intrinsic.Control.EndIf
+				'if indirect_seq is equal to "D" set ACTIVE to ACTIVE
+				F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Trim,=,"D")
+					V.uGlobal.uDETAILS(v.Local.iudtcount)!ACTIVE.Set("ACTIVE")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIF
+
+			F.intrinsic.string.build("SELECT START_DATE, START_TIME, EMPLOYEE from  V_JOBS_IN_PROCESS_G where SEQ = '{0}' and WORKCENTER = '{1}' and JOB = '{2}' and SUFFIX = '{3}'",V.uglobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.uglobal.uDETAILS(v.Local.iudtcount)!WORKCENTER,V.uglobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.Local.sdatetimeret)
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstDispatchData2",V.Local.sdatetimeret)
+
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstDispatchData2.EOF,<>,True)
+				V.Local.sstarttime.Set(V.ODBC.conx!rstDispatchData2.FieldValTrim!START_TIME)
+				'split on " " spaces
+				F.Intrinsic.String.Split(V.Local.sstarttime," ",V.Local.sstarttime)
+				'rebuild "HH:MM:SS AM/PM" to compare against ambient time because it has to match the same format
+				F.Intrinsic.String.Build("{0} {1}",V.Local.sstarttime(1),V.Local.sstarttime(2),V.Local.sstarttime)
+				V.Local.sstartdate.Set(V.ODBC.conx!rstDispatchData2.fieldvaltrim!START_DATE)
+				'get the difference in seconds between todays time and start time/todays date and start date
+				F.Intrinsic.date.DateDiff("s",V.Local.sstarttime,V.ambient.time,V.Local.itimeret)
+				F.Intrinsic.Date.DateDiff("s",V.ODBC.conx!rstDispatchData2.FieldVal!START_DATE,V.ambient.date,V.Local.idateret)
+				'add the time difference and the date difference together
+				F.intrinsic.Math.Add(V.Local.itimeret,V.Local.idateret,V.Local.fmanhours)
+				F.Intrinsic.Math.div(V.Local.fmanhours,60,V.local.fmanhours)
+				F.Intrinsic.Math.Div(V.Local.fmanhours,60,V.Local.fmanhours)
+				F.Intrinsic.Math.Round(V.Local.fmanhours,2,V.Local.fmanhours)
+
+				'added the counter
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!MAN_HOURS.Set(V.Local.fmanhours)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rstDispatchData2.Close
+
+			'get the actual hours and the estimated hours
+			F.Intrinsic.String.Build(" Select HOURS_ACTUAL, HOURS_ESTIMATED,SETUP from V_JOB_OPERATIONS_WC where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}'",V.uglobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uglobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.sactual)
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstDispatchData3",V.Local.sactual)
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstDispatchData3.EOF,<>,True)
+
+				V.uglobal.uDETAILS(v.Local.iudtcount)!HOURS_ESTIMATED.Set(V.ODBC.conx!rstDispatchData3.FieldVal!HOURS_ESTIMATED)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!SETUP.Set(V.ODBC.conx!rstDispatchData3.FieldVal!SETUP)
+				V.local.sactualhrs.set(V.odbc.conx!rstDispatchData3.FieldVal!HOURS_ACTUAL)
+				V.Local.iesttime.set(V.odbc.Conx!rstDispatchData3.FieldVal!HOURS_ESTIMATED)
+
+			''	'add the actual hours and the man hours to get te total hours
+				F.intrinsic.Math.Add(V.Local.sactualhrs,V.Local.fmanhours,V.Local.itotalhrs)
+
+				F.intrinsic.math.round(V.Local.itotalhrs,2,V.Local.itotalhrs)
+
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!TOTAL_HOURS.Set(V.Local.itotalhrs)
+				'divide total hours by estimated
+				F.Intrinsic.Control.If(V.local.iesttime,<>,0)
+					F.Intrinsic.Math.Div(V.Local.itotalhrs,V.Local.iesttime,V.Local.spercomp)
+				F.Intrinsic.Control.EndIf
+				'multiply by 100
+				F.Intrinsic.Math.Mult(V.Local.spercomp,100,V.Local.spercomp)
+				F.intrinsic.Math.Round(V.Local.spercomp,2,V.Local.spercomp)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!PERCENT_COMPLETE.Set(V.Local.spercomp.Trim)
+			F.Intrinsic.Control.EndIf
+			F.odbc.conx!rstDispatchData3.Close
+
+			'check the USER_10 field then set the UDT - uDETAILS
+			F.Intrinsic.String.Build("select USER_6 from WO_USER_FLDS where JOB = '{0}' and SUFFIX = '{1}'",V.uglobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.Local.suser)
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstDispatchData4",V.Local.suser)
+
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstDispatchData4.EOF,<>,True)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!USER_OPTION.Set(V.ODBC.Conx!rstDispatchData4.FieldVal!USER_6)
+
+'				V.uGlobal.uDETAILS!USER_OPTION.Set(V.Local.suser)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rstDispatchData4.Close
+
+	'		F.ODBC.conx!rstDispatchData.Close
+			F.ODBC.conx!rstTylerQuery.Close
+			F.ODBC.conx!rstTylerQuery2.Close
+			F.ODBC.conx!rstTylerQuery3.Close
+		F.intrinsic.Control.Else
+			f.Intrinsic.variable.udtflagordinal(v.uGlobal.uDETAILS,True,v.Local.iudtcount)
+		F.Intrinsic.Control.EndIf
+
+		'check to see if part, description and job due are blank, if so flag them to later delete
+'		F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!PART,=,"")
+'		F.intrinsic.control.andif(V.uGlobal.uDETAILS(v.Local.iudtcount)!DESCRIPTION,=,"")
+'		F.Intrinsic.Control.AndIf(V.uglobal.uDETAILS(v.Local.iudtcount)!JOB_DUE,=,"")
+'			f.Intrinsic.variable.udtflagordinal(v.uGlobal.uDETAILS,True,v.Local.iudtcount)
+'		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Next(V.Local.iudtcount)
+F.Intrinsic.Control.EndIf
+
+'otherwise if the workgroup checkbox is checked populate the DETAILS UDT accordingly
+F.Intrinsic.Control.if(V.Screen.F_WC!chkWorkgroup.Value,=,1)
+	F.Intrinsic.Control.For(V.Local.iudtcount,V.uGlobal.uDETAILS.LBound,V.uGlobal.uDETAILS.UBound,1)
+
+
+		F.intrinsic.string.lpad(V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,"0",6,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE)
+		'call sub Seq_ready to see if this seq is ready passing our udt element we are on
+		F.Intrinsic.Control.CallSub(Seq_ready,"UDT",V.Local.iudtcount)
+		F.Intrinsic.Control.If(V.Args.Ready,=,True)
+
+'		F.intrinsic.string.lpad(V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,"0",6,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE)
+		F.Intrinsic.string.Concat("SELECT APSV3_JBMaster.Description as DESCRIPTION,","APSV3_JBMaster.Part as PART, APSV3_JBMaster.DueDate as JOB_DUE",V.Local.stylerquery5)
+		F.intrinsic.string.build("{0} from APSV3_JBMaster where JOB = '{1}' and SFX = '{2}'",V.local.stylerquery5,V.uglobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.local.iudtcount)!SUFFIX,V.local.stylerquery5)
+
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery",V.local.stylerquery5)
+		F.Intrinsic.Control.If(V.ODBC.conx!rstTylerQuery.EOF,<>,True)
+	'
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!DESCRIPTION.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!DESCRIPTION)
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!PART.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!PART)
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB_DUE.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!JOB_DUE)
+
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstTylerQuery.Close
+
+		F.Intrinsic.String.Concat("SELECT JOB_HEADER.JOB, JOB_HEADER.SUFFIX,","CONCAT(JOB_HEADER.JOB, CONCAT('-', JOB_HEADER.SUFFIX)) AS WORKORDER, JOB_HEADER.PART, JOB_HEADER.DESCRIPTION, JOB_HEADER.QTY_ORDER AS QTY_ORIGINAL, ",V.local.squery)
+		F.Intrinsic.String.Concat(" JOB_HEADER.QTY_COMPLETED, (JOB_HEADER.QTY_ORDER - JOB_HEADER.QTY_COMPLETED) AS QTY_REMAINING, ","JOB_HEADER.DATE_DUE AS JOB_DUE ",V.Local.squery2)
+		F.intrinsic.string.build("{0}{1} from JOB_HEADER where JOB = '{2}' and SUFFIX = '{3}'",V.local.squery,V.local.squery2,V.uglobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.local.iudtcount)!SUFFIX,V.local.squery3)
+
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery",V.local.squery3)
+
+'		F.Intrinsic.String.Concat("SELECT JOB_OPERATIONS.SEQ, CODE_SORT_OPER, JOB_OPERATIONS.UNITS, JOB_OPERATIONS.HOURS_ESTIMATED, JOB_OPERATIONS.HOURS_ACTUAL, (JOB_OPERATIONS.HOURS_ACTUAL - JOB_OPERATIONS.HOURS_ESTIMATED) AS"," HOURS_REMAINING, JOB_OPERATIONS.DATE_START AS SEQ_START, JOB_OPERATIONS.DATE_DUE AS SEQ_DUE",V.Local.squery)
+'			F.Intrinsic.String.Build("{0} from JOB_OPERATIONS where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery2)
+
+
+		F.Intrinsic.String.Concat("SELECT JOB_OPERATIONS.UNITS_OPEN,JOB_OPERATIONS.UNITS_COMPLETE, JOB_OPERATIONS.SEQ, CODE_SORT_OPER, JOB_OPERATIONS.UNITS, JOB_OPERATIONS.HOURS_ESTIMATED, JOB_OPERATIONS.HOURS_ACTUAL, (JOB_OPERATIONS.HOURS_ACTUAL - JOB_OPERATIONS.HOURS_ESTIMATED) AS"," HOURS_REMAINING, JOB_OPERATIONS.DATE_START AS SEQ_START, JOB_OPERATIONS.DATE_DUE AS SEQ_DUE",V.Local.squery)
+		F.Intrinsic.String.Build("{0} from JOB_OPERATIONS where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery2)
+		
+'			F.Intrinsic.Control.EndIf
+			F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery2",V.local.squery2)
+			F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery2.EOF,<>,True)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!CODE_SORT_OPER.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!CODE_SORT_OPER)
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!UNITS.Set(V.ODBC.Conx!rsttylerquery2.FieldValTrim!UNITS)
+
+'				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_COMPLETE)
+'				V.Local.iremain.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_OPEN)
+'				F.Intrinsic.Math.Sub(V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL,V.Local.iremain,V.Local.iremain)
+'				V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_REMAINING.Set(V.Local.iremain)
+
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_OPEN)
+			V.Local.iremain.Set(V.ODBC.Conx!rstTylerQuery2.FieldValTrim!UNITS_COMPLETE)
+			F.Intrinsic.Math.Sub(V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL,V.Local.iremain,V.Local.iremain)
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_REMAINING.Set(V.Local.iremain)
+
+'		F.Intrinsic.String.Concat("SELECT JOB_OPERATIONS.SEQ, JOB_OPERATIONS.UNITS, JOB_OPERATIONS.HOURS_ESTIMATED, JOB_OPERATIONS.HOURS_ACTUAL, (JOB_OPERATIONS.HOURS_ACTUAL - JOB_OPERATIONS.HOURS_ESTIMATED) AS"," HOURS_REMAINING, JOB_OPERATIONS.DATE_START AS SEQ_START, JOB_OPERATIONS.DATE_DUE AS SEQ_DUE",V.Local.squery)
+'		F.Intrinsic.String.Build("{0} from JOB_OPERATIONS where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery2)
+'
+'		F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery2",V.local.squery2)
+'		F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery2.EOF,<>,True)
+'
+'			V.uGlobal.uDETAILS(v.Local.iudtcount)!UNITS.Set(V.ODBC.Conx!rsttylerquery2.FieldValTrim!UNITS)
+
+		F.Intrinsic.Control.EndIf
+
+'		F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery2",V.local.squery2)
+
+		F.Intrinsic.String.Concat("SELECT JOBS_IN_PROCESS_G.WORKCENTER,"," JOBS_IN_PROCESS_G.EMPLOYEE",V.Local.squery)
+		F.Intrinsic.String.Build("{0} from JOBS_IN_PROCESS_G where JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'",V.Local.squery,V.uGlobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.local.squery2)
+
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery3",V.local.squery2)
+
+		F.Intrinsic.String.Build("SELECT JOBS_IN_PROCESS_G.INDIRECT, JOBS_IN_PROCESS_G.WORKCENTER, JOBS_IN_PROCESS_G.JOB, JOBS_IN_PROCESS_G.SUFFIX, JOBS_IN_PROCESS_G.SEQ, JOBS_IN_PROCESS_G.EMPLOYEE, EMPLOYEE_MSTR.NAME FROM JOBS_IN_PROCESS_G left join EMPLOYEE_MSTR on JOBS_IN_PROCESS_G.EMPLOYEE = EMPLOYEE_MSTR.EMPLOYEE where JOBS_IN_PROCESS_G.INDIRECT = '{0}' and JOB = '{1}' and SUFFIX = '{2}' and SEQ = '{3}'","D",V.uGlobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.squery)
+
+'		f.Intrinsic.String.Build(SELECTEMPLOYEE,INDIRECTfromJOBS_IN_PROCESS_GINNERJOINEMPLOYEE_MSTR.EMPLOYEEonJOBS_IN_PROCESS_G.EMPLOYEE
+	
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstTylerQuery4",V.Local.squery)
+
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery4.EOF,<>,True)
+			'loop through the uDETAILS UDT
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!EMPLOYEE_NAME.Set(V.ODBC.Conx!rstTylerQuery4.FieldValTrim!NAME)
+
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstTylerQuery.EOF,<>,True)
+'			V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_REMAINING.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!QTY_REMAINING)
+'			V.uGlobal.uDETAILS(v.Local.iudtcount)!QTY_ORIGINAL.Set(V.ODBC.Conx!rstTylerQuery.FieldValTrim!QTY_ORIGINAL)
+
+			'set the local job and suffix variables to use for queries later	
+			V.Local.sworkorder.Set(V.uGlobal.uDETAILS(v.Local.iudtcount)!WORKORDER)
+			F.Intrinsic.String.Split(V.Local.sworkorder,"-",V.Local.sworkorder)
+			V.Local.sjob.Set(V.Local.sworkorder(0))
+			V.Local.ssuff.Set(V.Local.sworkorder(1))
+
+			F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!EMPLOYEE_NAME,<>,"")
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Set(V.ODBC.Conx!rstTylerQuery4.FieldValTrim!INDIRECT)
+			F.Intrinsic.Control.EndIf
+			'if INDIRECT_SEQ is equal to "D" set ACTIVE in the uDETAILS UDT to "ACTIVE"
+			F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Trim,=,"D")
+				F.Intrinsic.String.Build("SELECT WORKCENTER from JOBS_IN_PROCESS_G where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}'",V.uglobal.uDETAILS(v.Local.iudtcount)!JOB,V.uGlobal.uDETAILS(v.local.iudtcount)!SUFFIX,V.uGlobal.uDETAILS(v.local.iudtcount)!SEQUENCE,V.Local.wgquery)
+				F.ODBC.Connection!conx.OpenRecordsetRO("rstWGWC",V.local.wgquery)
+				F.Intrinsic.Control.If(V.ODBC.Conx!rstWGWC.EOF,<>,True)
+					V.uGlobal.uDETAILS(v.Local.iudtcount)!WORKCENTER.Set(V.ODBC.Conx!rstWGWC.FieldVal!WORKCENTER)
+				F.Intrinsic.Control.EndIF
+				F.ODBC.conx!rstWGWC.Close
+				F.Intrinsic.Control.EndIf
+
+			'if INDIRECT_SEQ is equal to "D" set ACTIVE in the uDETAILS UDT to "ACTIVE"
+			F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Trim,=,"D")
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!ACTIVE.Set("ACTIVE")
+			F.Intrinsic.Control.EndIf
+			'if indirect_seq is equal to "D" set ACTIVE to ACTIVE
+			F.Intrinsic.Control.If(V.uGlobal.uDETAILS(v.Local.iudtcount)!INDIRECT_SEQ.Trim,=,"D")
+				V.uGlobal.uDETAILS(v.Local.iudtcount)!ACTIVE.Set("ACTIVE")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIF
+
+	F.intrinsic.string.build("SELECT START_DATE, START_TIME, EMPLOYEE from  V_JOBS_IN_PROCESS_G where SEQ = '{0}' and WORKCENTER = '{1}' and JOB = '{2}' and SUFFIX = '{3}'",V.uglobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.uglobal.uDETAILS(v.Local.iudtcount)!WORKCENTER,V.uglobal.uDETAILS(v.local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.Local.sdatetimeret)
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstDispatchData2",V.Local.sdatetimeret)
+
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstDispatchData2.EOF,<>,True)
+			V.Local.sstarttime.Set(V.ODBC.conx!rstDispatchData2.FieldValTrim!START_TIME)
+			'split on " " spaces
+			F.Intrinsic.String.Split(V.Local.sstarttime," ",V.Local.sstarttime)
+			'rebuild "HH:MM:SS AM/PM" to compare against ambient time because it has to match the same format
+			F.Intrinsic.String.Build("{0} {1}",V.Local.sstarttime(1),V.Local.sstarttime(2),V.Local.sstarttime)
+			V.Local.sstartdate.Set(V.ODBC.conx!rstDispatchData2.fieldvaltrim!START_DATE)
+			'get the difference in seconds between todays time and start time/todays date and start date
+			F.Intrinsic.date.DateDiff("s",V.Local.sstarttime,V.ambient.time,V.Local.itimeret)
+			F.Intrinsic.Date.DateDiff("s",V.ODBC.conx!rstDispatchData2.FieldVal!START_DATE,V.ambient.date,V.Local.idateret)
+			'add the time difference and the date difference together
+			F.intrinsic.Math.Add(V.Local.itimeret,V.Local.idateret,V.Local.fmanhours)
+			F.Intrinsic.Math.div(V.Local.fmanhours,60,V.local.fmanhours)
+			F.Intrinsic.Math.Div(V.Local.fmanhours,60,V.Local.fmanhours)
+			F.Intrinsic.Math.Round(V.Local.fmanhours,2,V.Local.fmanhours)
+
+			'added the counter
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!MAN_HOURS.Set(V.Local.fmanhours)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstDispatchData2.Close
+
+		'get the actual hours and the estimated hours
+		F.Intrinsic.String.Build(" Select HOURS_ACTUAL, HOURS_ESTIMATED,SETUP from V_JOB_OPERATIONS_WC where JOB = '{0}' and SUFFIX = '{1}' and SEQ = '{2}'",V.uglobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.uglobal.uDETAILS(v.Local.iudtcount)!SEQUENCE,V.Local.sactual)
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstDispatchData3",V.Local.sactual)
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstDispatchData3.EOF,<>,True)
+
+			V.uglobal.uDETAILS(v.Local.iudtcount)!HOURS_ESTIMATED.Set(V.ODBC.conx!rstDispatchData3.FieldVal!HOURS_ESTIMATED)
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!SETUP.Set(V.ODBC.conx!rstDispatchData3.FieldVal!SETUP)
+			V.local.sactualhrs.set(V.odbc.conx!rstDispatchData3.FieldVal!HOURS_ACTUAL)
+			V.Local.iesttime.set(V.odbc.Conx!rstDispatchData3.FieldVal!HOURS_ESTIMATED)
+
+		''	'add the actual hours and the man hours to get te total hours
+			F.intrinsic.Math.Add(V.Local.sactualhrs,V.Local.fmanhours,V.Local.itotalhrs)
+'			F.intrinsic.Math.Add(V.Local.sactualhrs,V.uglobal.uDETAILS(v.local.iudtcount)!MAN_HOURS.Float,V.Local.itotalhrs)
+
+			F.intrinsic.math.round(V.Local.itotalhrs,2,V.Local.itotalhrs)
+
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!TOTAL_HOURS.Set(V.Local.itotalhrs)
+			'divide total hours by estimated
+			F.Intrinsic.Control.If(V.local.iesttime,<>,0)
+				F.Intrinsic.Math.Div(V.Local.itotalhrs,V.Local.iesttime,V.Local.spercomp)
+			F.Intrinsic.Control.EndIf
+			'multiply by 100
+			F.Intrinsic.Math.Mult(V.Local.spercomp,100,V.Local.spercomp)
+			F.intrinsic.Math.Round(V.Local.spercomp,2,V.Local.spercomp)
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!PERCENT_COMPLETE.Set(V.Local.spercomp.Trim)
+		F.Intrinsic.Control.EndIf
+		F.odbc.conx!rstDispatchData3.Close
+
+		'check the USER_10 field then set the UDT - uDETAILS
+		F.Intrinsic.String.Build("select USER_6 from WO_USER_FLDS where JOB = '{0}' and SUFFIX = '{1}'",V.uglobal.uDETAILS(v.Local.iudtcount)!JOB,V.uglobal.uDETAILS(v.Local.iudtcount)!SUFFIX,V.Local.suser)
+		F.ODBC.Connection!Conx.OpenRecordsetRO("rstDispatchData4",V.Local.suser)
+		F.Intrinsic.Control.If(V.ODBC.Conx!rstDispatchData4.EOF,<>,True)
+			V.uGlobal.uDETAILS(v.Local.iudtcount)!USER_OPTION.Set(V.ODBC.Conx!rstDispatchData4.FieldVal!USER_6)
+
+'			V.uGlobal.uDETAILS!USER_OPTION.Set(V.Local.suser)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.conx!rstDispatchData4.Close
+
+'		F.ODBC.conx!rstDispatchData.Close
+		F.ODBC.conx!rstTylerQuery.Close
+		F.ODBC.conx!rstTylerQuery2.Close
+		F.ODBC.conx!rstTylerQuery3.Close
+	F.intrinsic.Control.Else
+			f.Intrinsic.variable.udtflagordinal(v.uGlobal.uDETAILS,True,v.Local.iudtcount)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.iudtcount)
+F.Intrinsic.Control.EndIf
+
+F.intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uDETAILS)
+
+'////////////////////////////////////////////////////////////////////////
+
+'set the variable with the number of rows in the flexgrid
+V.Local.irow.Set(V.Screen.F_WC!gsfg_columns.Rows)
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.irow,1,V.Local.irow)
+'loop through the flexgrid
+F.Intrinsic.Control.For(V.Local.icount,1,V.local.irow,1)
+	'save the value of the checkbox to the variable
+	Gui.F_WC.gsfg_columns.GetTextMatrix(1,V.Local.icount,V.Local.scheck)
+	'check to see if the box is checked or not checked
+	F.Intrinsic.Control.If(V.Local.scheck,=,1)
+		V.Local.ititlecount.Set(V.Local.icount)
+'		F.Intrinsic.Math.Sub(V.Local.icount,1,V.Local.ititlecount2)
+		Gui.F_WC.gsfg_columns.GetTextMatrix(0,V.Local.icount,V.Local.sname)
+'		Gui.F_WC.gsfg_DJL.TextMatrix(0,0,V.Local.sname)
+		F.Intrinsic.Math.Sub(V.Local.icount,1,V.Local.ititlecount2)
+		'get the reference for each column that is checked
+		Gui.F_WC.gsfg_columns.GetTextMatrix(2,V.Local.icount,V.Local.sref)
+		F.Intrinsic.Math.Add(V.Local.icount3,1,V.Local.icount3)
+			'ifitispopulateitintheotherflexgrid
+		Gui.F_WC.gsfg_columns.GetTextMatrix(0,V.Local.icount,V.Local.scolumn)
+		F.Intrinsic.String.Build("{0}*!*{1}",V.Local.scolumn2,V.Local.scolumn,V.Local.scolumn2)
+	F.intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.icount)
+
+F.Intrinsic.String.Split(V.Local.scolumn2,"*!*",V.Local.scolumn2)
+
+'loop through scolumn2
+F.Intrinsic.Control.For(V.Local.icount2,V.Local.scolumn2.LBound,V.Local.scolumn2.UBound,1)
+	F.Intrinsic.Control.If(V.Local.icount2,=,0)
+		V.local.icount2.Set(1)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.scolumn2(v.Local.icount2),<>,"")
+
+		'add the checked columns to the DJL flexgrid
+		Gui.F_WC.gsfg_DJL.TextMatrix(V.Local.icount4,0,V.Local.scolumn2(v.Local.icount2))
+		'loads the uDETAILS UDT
+
+		Gui.F_WC.gsfg_DJL.LoadFromUDT("uglobal.uDETAILS","ACTIVE*!*WORKORDER*!*SEQUENCE*!*PART*!*DESCRIPTION*!*WORKCENTER*!*SETUP*!*QTY_REMAINING*!*QTY_ORIGINAL*!*SEQ_START*!*SEQ_DUE*!*JOB_DUE*!*EMPLOYEE_NAME*!*MAN_HOURS*!*TOTAL_HOURS*!*HOURS_ESTIMATED*!*PERCENT_COMPLETE*!*UNITS*!*USER_OPTION*!*CODE_SORT_OPER",-1)
+		F.Intrinsic.Math.Add(V.Local.icount4,1,V.Local.icount4)
+		V.Local.icount2.Set(V.Local.scolumn2.UBound)
+
+	F.Intrinsic.Control.Else
+
+	F.intrinsic.control.endif
+F.Intrinsic.Control.Next(V.Local.icount2)
+'
+F.Intrinsic.Control.If(V.Global.iRefreshCount,=,1)
+
+'loop through uDetails
+	F.Intrinsic.Control.For(V.local.idetailscount,V.uGlobal.uDETAILS.LBound,V.uGlobal.uDETAILS.UBound,1)
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uDETAILSCopy!Workorder,V.uGlobal.uDETAILS(v.Local.idetailscount)!Workorder,V.Local.sdetailsreturn)
+'		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uDETAILSCopy!EMPLOYEE_NAME,V.uGlobal.uDETAILS(v.Local.idetailscount)!EMPLOYEE_NAME,V.Local.sdetailsreturn2)
+		F.Intrinsic.variable.UDTMultiseek(V.uGlobal.uDETAILSCopy!SEQUENCE,V.uGlobal.uDETAILS(v.Local.idetailscount)!SEQUENCE,V.Local.sdetailsreturn3)
+	
+		F.Intrinsic.Control.If(V.Local.sdetailsreturn.Trim,=,"")
+			V.uGlobal.uDETAILS(v.Local.idetailscount)!NEW.Set("Y")
+'		F.Intrinsic.Control.elseIf(V.Local.sdetailsreturn2.Trim,=,"")
+'			V.uGlobal.uDETAILS(v.Local.idetailscount)!NEW.Set("Y")
+		F.Intrinsic.Control.elseIf(V.local.sdetailsreturn3.Trim,=,"")
+			V.uGlobal.uDETAILS(v.Local.idetailscount)!NEW.Set("Y")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.idetailscount)
+
+F.Intrinsic.Control.EndIf
+
+'set the variable with the number of rows in the flexgrid
+V.Local.icolorrow.Set(V.Screen.F_WC!gsfg_DJL.Rows)
+
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.icolorrow,1,V.Local.icolorrow)
+
+V.Local.idetailcols.Set(V.Screen.F_WC!gsfg_DJL.Cols)
+
+V.Local.icolorcount2.Set(0)
+
+F.Intrinsic.Control.For(V.Local.icolorcount,1,V.local.icolorrow,1)
+
+	'save the value of the checkbox to the variable
+	Gui.F_WC.gsfg_DJL.GetTextMatrix(1,V.Local.icolorcount,V.Local.scolorret)
+	Gui.F_WC.gsfg_DJL.GetTextMatrix(2,V.Local.icolorcount,V.Local.scolorret2)
+
+	F.Intrinsic.Control.If(V.Local.scolorret,=,V.uGlobal.uDETAILS(v.Local.icolorcount2)!WORKORDER)
+	F.Intrinsic.control.AndIf(V.Local.scolorret2,=,V.uGlobal.uDETAILS(v.Local.icolorcount2)!SEQUENCE)
+	F.Intrinsic.control.andif(V.uglobal.uDETAILS(v.local.icolorcount2)!new,=,"Y")
+
+	gui.F_WC.gsfg_DJL.rowcolor(v.Local.icolorcount,v.Local.iorange,v.Local.iblack)
+
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Math.Add(V.local.icolorcount2,1,V.Local.icolorcount2)
+F.Intrinsic.control.Next(V.local.icolorcount)
+
+V.Local.ired.Set(0)
+'loop through the flexgrid to set % comp column to red if >100
+F.Intrinsic.Control.For(V.Local.ired,0,V.Local.idetailcols,1)
+	Gui.F_WC.gsfg_DJL.GetTextMatrix(V.Local.ired,0,V.Local.sredret)
+		F.Intrinsic.Control.If(V.Local.sredret,=,"% Comp.")
+			V.Local.iredcolumncount.Set(V.Local.ired)
+		F.Intrinsic.Control.EndIf
+'	f.intir
+F.Intrinsic.Control.next(V.Local.ired)
+
+F.Intrinsic.Control.For(V.Local.iredcount2,1,V.Local.icolorrow,1)
+	'if the number in the % comp column is >100 set to red
+
+	Gui.F_WC.gsfg_DJL.GetTextMatrix(V.Local.iredcolumncount,V.Local.iredcount2,V.Local.sredret)
+	F.Intrinsic.Control.If(V.local.sredret,>,100)
+'		
+		Gui.F_WC.gsfg_DJL.BuildStyle(7,V.Local.iredcolumncount,"type","locked",True)
+		Gui.F_WC.gsfg_DJL.BuildStyle(7,V.Local.iredcolumncount,"Format","Alignment",4)
+
+		'set the new buildstyle for the orange color
+		Gui.F_WC.gsfg_DJL.BuildStyle(7,V.Local.iredcolumncount,"color","Back",V.Color.SEC-GSS-07)
+
+		Gui.F_WC.gsfg_DJL.applystyle(V.local.iredcount2,7)
+
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iredcount2)
+
+'set the variable with the number of rows in the flexgrid
+V.Local.irow2.Set(V.Screen.F_WC!gsfg_DJL.Rows)
+
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.irow2,1,V.Local.irow2)
+F.Intrinsic.Control.For(V.local.igreencount,1,V.Local.irow2,1)
+	'loop through the flexgrid and see if the first column has the word 'Active' in it if so make the cell green
+	Gui.F_WC.gsfg_DJL.GetTextMatrix(0,V.Local.igreencount,V.Local.sgreencolor)
+	F.Intrinsic.Control.If(V.Local.sgreencolor,=,"ACTIVE")
+			Gui.F_WC.gsfg_DJL.BuildStyle(6,0,"color","Back",V.Local.igreen)
+			Gui.F_WC.gsfg_DJL.BuildStyle(6,0,"Type","locked",True)
+			Gui.F_WC.gsfg_DJL.BuildStyle(6,0,"Format","Alignment",4)
+			Gui.F_WC.gsfg_DJL.applystyle(V.local.igreencount,6)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.igreencount)
+
+'call the refresh check sub
+F.Intrinsic.Control.CallSub(Refreshcheck)
+
+'dont display any rows if there isn't a workorder in the UDT
+F.Intrinsic.Control.For(V.local.visiblecount,V.uGlobal.uDETAILS!WORKORDER.LBound,V.uGlobal.uDETAILS!WORKORDER.UBound,1)
+	F.Intrinsic.Control.If(V.uGlobal.uDETAILS!WORKORDER,=,"")
+		Gui.F_WC.gsfg_DJL.Visible(false)
+	F.Intrinsic.Control.Else
+	'make the flexgrids visible again
+	Gui.F_WC.gsfg_DJL.Visible(true)
+	F.intrinsic.control.EndIf
+F.Intrinsic.Control.Next(V.local.visiblecount)
+
+V.Local.stime.Set(V.ambient.Time)
+''set the refresh time in the time textbox
+Gui.F_WC.txtRefreshTime.Text(V.Local.stime)
+
+V.Global.iRefreshCount.Set(1)
+Gui.F_WC.gsfg_DJL.Sorting(true)
+
+Gui.F_WC.timer2.Enabled(true)
+
+F.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("btnrefresh_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+
+program.sub.btnrefresh_click.end
+
+Program.Sub.FillUDTs.Start
+F.Intrinsic.Control.SetErrorHandler("FillUDTs_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iCount.Declare
+V.Local.squery.Declare(String)
+V.Local.squery2.Declare(String)
+V.Local.squery3.Declare(String)
+V.Local.squery4.Declare(String)
+V.Local.squery5.Declare(String)
+V.Local.squery6.Declare(String)
+V.Local.sfinalquery.Declare(String)
+
+V.Local.splaceholderWC.Declare(String)
+V.Local.splaceholderWG.Declare(String)
+
+'query to populate the WGWC UDT
+F.Intrinsic.String.Build("SELECT DISTINCT WL.WORKGROUP AS WORKGROUP, WC.MACHINE AS WORKCENTER FROM WORKCENTERS WC LEFT OUTER JOIN WORKGROUP_LINE WL ON WC.MACHINE=WL.WORKCENTER WHERE  WORKCENTER <> '{0}' GROUP BY WORKGROUP, MACHINE  ORDER BY WORKCENTER, WORKGROUP",V.local.splaceholderWC,V.Global.sQuery)
+
+'F.Intrinsic.String.Build("SELECT WL.WORKGROUP AS WORKGROUP, WC.MACHINE AS WORKCENTER FROM WORKCENTERS WC LEFT OUTER JOIN WORKGROUP_LINE WL ON WC.MACHINE=WL.WORKCENTER WHERE  WORKCENTER <> '{0}' GROUP BY WORKGROUP, MACHINE  ORDER BY WORKGROUP, WORKCENTER",V.local.splaceholderWC,V.Global.sQuery)
+F.ODBC.Connection!conx.OpenRecordsetRO("rstWGWC",V.Global.sQuery)
+F.Intrinsic.Control.If(V.ODBC.Conx!rstWGWC.EOF,<>,True)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("Conx","rstWGWC","uGlobal.uWGWC","false",1)
+F.Intrinsic.Control.EndIF
+F.ODBC.conx!rstWGWC.Close
+
+
+F.Intrinsic.Variable.UDTCopy(V.uGlobal.uWGWC,V.uGlobal.uWC,False)
+F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uWC!WORKGROUP,V.uGlobal.uWC!WORKGROUP)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uWC)
+F.Intrinsic.Variable.UDTCopy(V.uGlobal.uWGWC,V.uGlobal.uWG,False)
+F.Intrinsic.Variable.UDTMultiFlagDuplicates(V.uGlobal.uWG!WORKCENTER,V.uGlobal.uWG!WORKCENTER)
+F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uWG)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("FillUDTs_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.FillUDTs.End
+
+Program.Sub.FlexGridStyles.Start
+F.Intrinsic.Control.SetErrorHandler("FlexGridStyles_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.ic.Declare(Long)
+V.local.irows.Declare(Long)
+V.Local.scolpercent.declare(String)
+V.Local.sret.Declare(String)
+V.Local.irow.Declare(Long)
+V.Local.icount.Declare(Long)
+
+'make the flexgrids temporarily invisible while loading
+Gui.F_WC.gsfg_DJL.Visible(false)
+
+'details flexgrid at the top
+Gui.F_WC.gsfg_DJL.Cols(20)
+Gui.F_WC.gsfg_DJL.Rows(1)
+Gui.F_WC.gsfg_DJL.Rows(2)
+Gui.F_WC.gsfg_DJL.FixedRows(1)
+V.Local.scolpercent.Set(".055:.055:.065:.065:.065:.055:.065:.065:.065:.065:.065:.065:.065:.065:.065:.065:.065:.065:.055:.055")
+F.Intrinsic.String.Split(V.Local.scolpercent,":",V.Local.scolpercent)
+
+F.Intrinsic.Control.For(V.Local.irows,1,20,1)
+
+	F.intrinsic.Math.Sub(V.Local.irows,1,V.Local.ic)
+
+	Gui.F_WC.gsfg_columns.GetTextMatrix(1,V.Local.irows,V.Local.sret)
+	F.intrinsic.Control.If(V.Local.sret,<>,1)
+		V.Local.scolpercent(v.Local.ic).Set(0)
+	F.Intrinsic.control.EndIf
+
+F.intrinsic.control.next(V.Local.irows)
+
+F.Intrinsic.String.Join(V.Local.scolpercent,":",V.Local.scolpercent)
+Gui.F_WC.gsfg_DJL.SetColumnPercentages(V.Local.scolpercent)
+
+'active column
+Gui.F_WC.gsfg_DJL.TextMatrix(0,0,"Active")
+Gui.F_WC.gsfg_DJL.BuildStyle(1,0,"Fontstyle","Bold",True)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,0,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,0,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,0,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,0,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,0,"Fontstyle","Bold",True)
+
+'work order (job-suffix) column
+Gui.F_WC.gsfg_DJL.TextMatrix(1,0,"Workorder")
+Gui.F_WC.gsfg_DJL.BuildStyle(1,1,"Fontstyle","Bold",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,1,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,1,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,1,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,1,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,1,"Fontstyle","Bold",True)
+
+'work order sequence column
+Gui.F_WC.gsfg_DJL.TextMatrix(2,0,"WO Seq")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,2,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,2,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,2,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,2,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,2,"Fontstyle","Bold",True)
+'Part Column
+Gui.F_WC.gsfg_DJL.TextMatrix(3,0,"Part")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,3,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,3,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,3,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,3,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,3,"Fontstyle","Bold",True)
+
+'Job Description Column
+Gui.F_WC.gsfg_DJL.TextMatrix(4,0,"Description")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,4,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,4,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,4,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,4,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,4,"Fontstyle","Bold",True)
+
+'Workcenter column (possibly workgroup)
+Gui.F_WC.gsfg_DJL.TextMatrix(5,0,"Workcenter")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,5,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,5,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,5,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,5,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,5,"Fontstyle","Bold",True)
+
+'Qty Rem/Orig Column
+'Dtl Hours (estimated and remaining) column
+'Setup Column
+Gui.F_WC.gsfg_DJL.TextMatrix(6,0,"Setup")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,6,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,6,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,6,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,6,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,6,"Fontstyle","Bold",True)
+
+'Dtl Hours (estimated and remaining) column
+
+'Seq Start Column
+'Qty Remaining colum
+Gui.F_WC.gsfg_DJL.TextMatrix(7,0,"Qty. Rem.")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,7,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,7,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,7,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,7,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,7,"Fontstyle","Bold",True)
+
+'Qty Original column
+Gui.F_WC.gsfg_DJL.TextMatrix(8,0,"Qty. Orig.")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,8,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,8,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,8,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,8,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,8,"Fontstyle","Bold",True)
+
+'Seq Start Column
+Gui.F_WC.gsfg_DJL.TextMatrix(9,0,"Seq. Start")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,9,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,9,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,9,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,9,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,9,"Fontstyle","Bold",True)
+
+'Seq Due Column
+Gui.F_WC.gsfg_DJL.TextMatrix(10,0,"Seq Due")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,10,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,10,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,10,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,10,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,10,"Fontstyle","Bold",True)
+
+'Job Due Column
+Gui.F_WC.gsfg_DJL.TextMatrix(11,0,"Job Due")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,11,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,11,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,11,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,11,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,11,"Fontstyle","Bold",True)
+
+'employee Name column
+Gui.F_WC.gsfg_DJL.TextMatrix(12,0,"Emp. Name")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,12,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,12,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,12,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,12,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,12,"Fontstyle","Bold",True)
+
+'man hours column
+Gui.F_WC.gsfg_DJL.TextMatrix(13,0,"Man Hrs.")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,13,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,13,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,13,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,13,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,13,"Fontstyle","Bold",True)
+
+'total hours column
+Gui.F_WC.gsfg_DJL.TextMatrix(14,0,"Total Hrs")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,14,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,14,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,14,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,14,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,14,"Fontstyle","Bold",True)
+
+'Estimated Hours column
+Gui.F_WC.gsfg_DJL.TextMatrix(15,0,"Estimated Hours")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,15,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,15,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,15,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,15,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,15,"Fontstyle","Bold",True)
+
+'% Complete Column
+Gui.F_WC.gsfg_DJL.TextMatrix(16,0,"% Comp.")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,16,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,16,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,16,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,16,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,16,"Fontstyle","Bold",True)
+
+'runtime column
+Gui.F_WC.gsfg_DJL.TextMatrix(17,0,"Runtime")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,17,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,17,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,17,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,17,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,17,"Fontstyle","Bold",True)
+
+'euser field 10 column
+Gui.F_WC.gsfg_DJL.TextMatrix(18,0,"Field 6")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,18,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,18,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,18,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,18,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,18,"Fontstyle","Bold",True)
+
+Gui.F_WC.gsfg_DJL.TextMatrix(19,0,"Code Sort Oper")
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,19,"type","locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(-1,19,"Format","Alignment",4)
+
+Gui.F_WC.gsfg_DJL.BuildStyle(2,19,"Type","Locked",True)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,19,"Format","Alignment",4)
+Gui.F_WC.gsfg_DJL.BuildStyle(2,19,"Fontstyle","Bold",True)
+
+Gui.F_WC.gsfg_DJL.ApplyStyle(0,2)
+
+'make the flexgrid visible again
+Gui.F_WC.gsfg_DJL.Visible(true)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("FlexGridStyles_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.FlexGridStyles.End
+
+program.sub.chkworkcenter_click.start
+F.Intrinsic.Control.SetErrorHandler("chkworkcenter_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.splaceholder.Declare(String)
+V.Local.icount.Declare(Long)
+
+Gui.F_WC.ddlWC.ClearItems
+
+'if the workcenter checkbox is checked, disable the other checkboxes
+F.Intrinsic.Control.If(V.Screen.F_WC!chkWorkcenter.Value,=,1)
+	Gui.F_WC.chkWorkgroup.Enabled(false)
+
+'	F.Intrinsic.Control.if(V.uGlobal.uWC.UBound,>=,0)
+''		F.Intrinsic.Control.For(V.Local.iCount,0,V.uGlobal.uWGWC.UBound,1)
+'		F.Intrinsic.Control.For(V.Local.iCount,V.uGlobal.uWC.LBound,V.uGlobal.uWC.UBound,1)
+'
+'				F.Intrinsic.Control.If(V.uGlobal.uWC(V.Local.iCount)!WORKCENTER.Length,<>,0)
+'			Gui.F_WC.ddlWC.AddItem(V.uGlobal.uWC(V.Local.iCount)!WORKCENTER)
+'		F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.Next(V.Local.iCount)
+'	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.if(V.uGlobal.uWGWC.UBound,>=,0)
+'		F.Intrinsic.Control.For(V.Local.iCount,0,V.uGlobal.uWGWC.UBound,1)
+		F.Intrinsic.Control.For(V.Local.iCount,V.uGlobal.uWGWC.LBound,V.uGlobal.uWGWC.UBound,1)
+
+				F.Intrinsic.Control.If(V.uGlobal.uWGWC(V.Local.iCount)!WORKCENTER.Length,<>,0)
+			Gui.F_WC.ddlWC.AddItem(V.uGlobal.uWGWC(V.Local.iCount)!WORKCENTER)
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.EndIf
+
+'otherwise if unchecked make them enabled
+F.Intrinsic.Control.Else
+	Gui.F_WC.chkWorkgroup.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkworkcenter_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkworkcenter_click.end
+
+program.sub.chkworkgroup_click.start
+F.Intrinsic.Control.SetErrorHandler("chkworkgroup_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.icount.Declare(Long)
+V.Local.splaceholder.Declare(String)
+V.Local.sworkgroup.Declare(String)
+Gui.F_WC.ddlWC.ClearItems
+
+'if the workgroup checkbox is checked, disable the other checkboxes
+F.Intrinsic.Control.If(V.Screen.F_WC!chkWorkgroup.Value,=,1)
+	Gui.F_WC.chkWorkcenter.Enabled(false)
+
+'	F.Intrinsic.Control.if(V.Screen.F_WC!chkWorkgroup.Value,=,1)
+'	F.Intrinsic.Control.andIf(V.uGlobal.uWGWC.UBound,>=,0)
+'		F.Intrinsic.Control.For(V.Local.iCount,V.uGlobal.uWGWC.LBound,V.uGlobal.uWGWC.UBound,1)
+'				
+'			F.Intrinsic.Control.If(V.uGlobal.uWGWC(V.Local.iCount)!WORKGROUP.Length,<>,0)
+'				F.Intrinsic.Control.If(V.Local.sworkgroup,<>,V.uGlobal.uWGWC(v.Local.icount)!WORKGROUP)
+'
+'					Gui.F_WC.ddlWC.AddItem(V.uGlobal.uWGWC(V.Local.iCount)!WORKGROUP)
+'					V.Local.sworkgroup.Set(V.uGlobal.uWGWC(v.Local.icount)!WORKGROUP)
+'				F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.Next(V.Local.iCount)
+'	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.if(V.Screen.F_WC!chkWorkgroup.Value,=,1)
+	F.Intrinsic.Control.andIf(V.uGlobal.uWG.UBound,>=,0)
+		F.Intrinsic.Control.For(V.Local.iCount,V.uGlobal.uWG.LBound,V.uGlobal.uWG.UBound,1)
+				
+			F.Intrinsic.Control.If(V.uGlobal.uWG(V.Local.iCount)!WORKCENTER.Length,<>,0)
+				F.Intrinsic.Control.If(V.Local.sworkgroup,<>,V.uGlobal.uWG(v.Local.icount)!WORKCENTER)
+
+					Gui.F_WC.ddlWC.AddItem(V.uGlobal.uWG(V.Local.iCount)!WORKCENTER)
+					V.Local.sworkgroup.Set(V.uGlobal.uWG(v.Local.icount)!WORKCENTER)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCount)
+	F.Intrinsic.Control.EndIf
+
+'otherwise if unchecked enable the other checkboxes
+F.Intrinsic.Control.Else
+	Gui.F_WC.chkWorkcenter.Enabled(true)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkworkgroup_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.callsub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.chkworkgroup_click.end
+
+Program.Sub.gsfgcolumns_buildstyle.Start
+F.Intrinsic.Control.SetErrorHandler("gsfgcolumns_buildstyle_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Global.sWO.Declare(String)
+V.Global.sWOSeq.Declare(String)
+V.Global.sPart.Declare(String)
+V.Global.sJobDesc.Declare(String)
+V.Global.sWorkcenter.Declare(String)
+V.Global.sRemQty.Declare(String)
+V.Global.sOrigQty.Declare(String)
+V.Global.sSeqStart.Declare(String)
+V.Global.sSeqDue.Declare(String)
+V.Global.sJobDue.Declare(String)
+V.Global.sEmpID.Declare(String)
+V.Global.sEmpName.Declare(String)
+V.Global.sactive.Declare(String)
+V.Global.ssetup.Declare(String)
+V.Global.smanhrs.Declare(String)
+V.Global.stotalhrs.Declare(String)
+V.Global.sesthrs.Declare(String)
+V.Global.sperccomp.Declare(String)
+V.Global.suserfield10.Declare(String)
+V.Global.sruntime.Declare(String)
+V.Global.scodesortoper.Declare(String)
+
+V.Local.irow.Declare(Long)
+V.Local.icount.Declare(Long)
+V.Local.scheck.Declare(String)
+V.Local.swo.Declare(String)
+V.Local.swoseq.Declare(String)
+
+'V.uGlobal.uColumns.Redim(0,17)
+'V.uGlobal.uColumns.Redim(0,18)
+V.uGlobal.uColumns.Redim(0,19)
+
+V.uGlobal.uColumns(0)!sActive.Set("Active")
+V.uGlobal.uColumns(1)!sWO.Set("Workorder")
+V.uGlobal.uColumns(2)!sWOSeq.Set("Work Order Seq")
+V.uGlobal.uColumns(3)!sPart.Set("Part")
+V.uGlobal.uColumns(4)!sJobDesc.Set("Job Description")
+V.uGlobal.uColumns(5)!sWC.Set("Workcenter")
+V.uGlobal.uColumns(6)!ssetup.Set("Setup")
+V.uGlobal.uColumns(6)!sRemQty.Set("Remaining Qty")
+V.uGlobal.uColumns(7)!sOrigQty.Set("Original Qty")
+V.uGlobal.uColumns(8)!sSeqStart.Set("Seq Start")
+V.uGlobal.uColumns(9)!sSeqDue.set("Seq Due")
+V.uGlobal.uColumns(10)!sJobDue.Set("Job Due")
+V.uGlobal.uColumns(11)!sEmpName.Set("Employee Name")
+V.uGlobal.uColumns(12)!sManHrs.Set("Man Hours")
+V.uGlobal.uColumns(13)!sTotalHrs.Set("Total Hours")
+V.uGlobal.uColumns(14)!sEstHrs.Set("EstimatedHours")
+V.uGlobal.uColumns(15)!sPercComp.Set("Percent Complete")
+V.uGlobal.uColumns(16)!sruntime.Set("Runtime")
+V.uGlobal.uColumns(17)!sUserField10.Set("User Field 6")
+V.uGlobal.uColumns(18)!scodesortoper.Set("Code Sort Oper")
+
+
+
+V.Global.sactive.Set("Active")
+V.Global.sWO.set("Workorder")
+V.Global.sWOSeq.Set("WO Seq")
+V.Global.sPart.Set("Part")
+V.Global.sJobDesc.Set("Job Description")
+V.Global.sWorkcenter.Set("Workcenter")
+V.Global.ssetup.Set("Setup")
+V.Global.sRemQty.Set("Remaining Qty")
+V.Global.sOrigQty.Set("Original Qty")
+V.Global.sSeqStart.Set("Seq Start")
+V.Global.sSeqDue.Set("Seq Due")
+V.Global.sJobDue.Set("Job Due")
+V.Global.sEmpName.Set("Employee Name")
+V.Global.smanhrs.Set("Man Hours")
+V.Global.stotalhrs.Set("Total Hours")
+V.Global.sesthrs.Set("Estimated Hours")
+V.Global.sperccomp.Set("Percent Complete")
+V.Global.suserfield10.Set("User Field 6")
+V.Global.sruntime.Set("Runtime")
+V.Global.scodesortoper.Set("Code Sort Oper")
+
+
+Gui.F_WC.gsfg_columns.Visible(false)
+
+Gui.F_WC.gsfg_columns.Cols(3)
+Gui.F_WC.gsfg_columns.Rows(21)
+
+Gui.F_WC.gsfg_columns.FixedRows(1)
+Gui.F_WC.gsfg_columns.SetColumnPercentages(".70:.30:.0")
+
+'column name column
+Gui.F_WC.gsfg_columns.TextMatrix(0,0,"Column")
+Gui.F_WC.gsfg_columns.BuildStyle(1,0,"Type","Locked",True)
+Gui.F_WC.gsfg_columns.BuildStyle(1,0,"Format","Alignment",2)
+
+'checkbox column
+Gui.F_WC.gsfg_columns.TextMatrix(1,0,"Include")
+Gui.F_WC.gsfg_columns.buildstyle(1,1,"Format","Alignment",4)
+Gui.F_WC.gsfg_columns.BuildStyle(1,1,"Type","Checkbox",True)
+Gui.F_WC.gsfg_columns.BuildStyle(1,1,"Type","locked",True)
+
+Gui.F_WC.gsfg_columns.BuildStyle(1,2,"Format","alignment",4)
+Gui.F_WC.gsfg_columns.BuildStyle(1,2,"Type","locked",True)
+
+Gui.F_WC.gsfg_columns.BuildStyle(2,1,"Format","alignment",4)
+Gui.F_WC.gsfg_columns.BuildStyle(2,1,"Type","Checkbox",True)
+
+Gui.F_WC.gsfg_columns.BuildStyle(3,0,"Format","Alignment",4)
+Gui.F_WC.gsfg_columns.BuildStyle(3,0,"Type","Locked",True)
+
+
+Gui.F_WC.gsfg_columns.TextMatrix(1,1,"1")
+Gui.F_WC.gsfg_columns.TextMatrix(1,2,"1")
+Gui.F_WC.gsfg_columns.TextMatrix(1,3,"1")
+
+'Gui.F_WC.gsfg_columns.ApplyStyle(0,1)
+Gui.F_WC.gsfg_columns.ApplyStyle(1,1)
+Gui.F_WC.gsfg_columns.ApplyStyle(2,1)
+Gui.F_WC.gsfg_columns.ApplyStyle(3,1)
+
+Gui.F_WC.gsfg_columns.TextMatrix(0,1,V.Global.sactive)
+Gui.F_WC.gsfg_columns.TextMatrix(0,2,V.Global.sWO)
+Gui.F_WC.gsfg_columns.TextMatrix(0,3,V.Global.sWOSeq)
+Gui.F_WC.gsfg_columns.TextMatrix(0,4,V.Global.sPart)
+Gui.F_WC.gsfg_columns.TextMatrix(0,5,V.Global.sJobDesc)
+Gui.F_WC.gsfg_columns.TextMatrix(0,6,V.Global.sWorkcenter)
+Gui.F_WC.gsfg_columns.TextMatrix(0,7,V.Global.ssetup)
+Gui.F_WC.gsfg_columns.TextMatrix(0,8,V.Global.sRemQty)
+Gui.F_WC.gsfg_columns.TextMatrix(0,9,V.Global.sOrigQty)
+Gui.F_WC.gsfg_columns.TextMatrix(0,10,V.Global.sSeqStart)
+Gui.F_WC.gsfg_columns.TextMatrix(0,11,V.Global.sSeqDue)
+Gui.F_WC.gsfg_columns.TextMatrix(0,12,V.Global.sJobDue)
+Gui.F_WC.gsfg_columns.TextMatrix(0,13,V.Global.sEmpName)
+Gui.F_WC.gsfg_columns.TextMatrix(0,14,V.Global.smanhrs)
+Gui.F_WC.gsfg_columns.TextMatrix(0,15,V.Global.stotalhrs)
+Gui.F_WC.gsfg_columns.TextMatrix(0,16,V.Global.sesthrs)
+Gui.F_WC.gsfg_columns.TextMatrix(0,17,V.Global.sperccomp)
+Gui.F_WC.gsfg_columns.TextMatrix(0,18,V.Global.sruntime)
+Gui.F_WC.gsfg_columns.TextMatrix(0,19,V.Global.suserfield10)
+Gui.F_WC.gsfg_columns.TextMatrix(0,20,V.Global.scodesortoper)
+
+
+Gui.F_WC.gsfg_columns.TextMatrix(2,1,"ACTIVE")
+Gui.F_WC.gsfg_columns.TextMatrix(2,2,"WORKORDER")
+Gui.F_WC.gsfg_columns.TextMatrix(2,3,"SEQUENCE")
+Gui.F_WC.gsfg_columns.TextMatrix(2,4,"PART")
+Gui.F_WC.gsfg_columns.TextMatrix(2,5,"DESCRIPTION")
+Gui.F_WC.gsfg_columns.TextMatrix(2,6,"WORKCENTER")
+Gui.F_WC.gsfg_columns.TextMatrix(2,7,"SETUP")
+Gui.F_WC.gsfg_columns.TextMatrix(2,8,"QTY_REMAINING")
+Gui.F_WC.gsfg_columns.TextMatrix(2,9,"QTY_ORIGINAL")
+Gui.F_WC.gsfg_columns.TextMatrix(2,10,"SEQ_START")
+Gui.F_WC.gsfg_columns.TextMatrix(2,11,"SEQ_DUE")
+Gui.F_WC.gsfg_columns.TextMatrix(2,12,"JOB_DUE")
+Gui.F_WC.gsfg_columns.TextMatrix(2,13,"EMPLOYEE_NAME")
+Gui.F_WC.gsfg_columns.TextMatrix(2,14,"MAN_HOURS")
+Gui.F_WC.gsfg_columns.TextMatrix(2,15,"TOTAL_HOURS")
+Gui.F_WC.gsfg_columns.TextMatrix(2,16,"ESTIMATED_HOURS")
+Gui.F_WC.gsfg_columns.TextMatrix(2,17,"PERCENT_COMPLETE")
+Gui.F_WC.gsfg_columns.TextMatrix(2,18,"RUNTIME")
+Gui.F_WC.gsfg_columns.TextMatrix(2,19,"USER_FIELD_6")
+Gui.F_WC.gsfg_columns.TextMatrix(2,20,"CODE_SORT_OPER")
+
+
+'Gui.F_WC.gsfg_columns.ApplyStyle(1,2)
+'Gui.F_WC.gsfg_columns.ApplyStyle(2,2)
+'Gui.F_WC.gsfg_columns.ApplyStyle(3,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(4,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(5,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(6,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(7,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(8,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(9,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(10,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(11,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(12,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(13,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(14,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(15,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(16,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(17,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(18,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(19,2)
+Gui.F_WC.gsfg_columns.ApplyStyle(20,2)
+
+
+'set the workorder and workorder sequence checkboxes to checked
+
+'set the variable with the number of rows in the flexgrid
+V.Local.irow.Set(V.Screen.F_WC!gsfg_columns.Rows)
+
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.irow,1,V.Local.irow)
+
+V.Local.icount.Set(1)
+
+Gui.F_WC.gsfg_columns.Visible(true)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfgcolumns_buildstyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.gsfgcolumns_buildstyle.End
+
+program.sub.timer2_timer.start
+F.Intrinsic.Control.SetErrorHandler("timer2_timer_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'disables the timer
+Gui.F_WC.timer2.enabled(false)
+
+F.Intrinsic.Control.If(V.Screen.F_WC!DisableChk.Value,=,0)
+	F.Intrinsic.Control.CallSub(Btnrefresh_click)
+F.Intrinsic.Control.EndIf
+
+'enables the timer
+Gui.F_WC.timer2.Enabled(true)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("timer2_timer_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.timer2_timer.end
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.stime.Declare(String)
+V.Local.sError.Declare(String)
+
+'establish a connection to the database
+Function.ODBC.Connection!Conx.OpenConnection(Variable.ambient.PDSN,Variable.Ambient.PUSER,Variable.Ambient.PPass,72000)
+
+'set the time for the timer
+V.Local.stime.Set(V.Ambient.Time)
+
+'call the flexgrid and UDT subroutines
+F.intrinsic.Control.CallSub(Filludts)
+F.Intrinsic.Control.CallSub(Gsfgcolumns_buildstyle)
+
+Gui.F_WC.txtRefreshTime.Enabled(false)
+
+Gui.F_WC.timer2.Enabled(true)
+
+Gui.F_WC.DisableChk.Value(1)
+
+'set the refresh time in the time textbox
+Gui.F_WC.txtRefreshTime.Text(V.Local.stime)
+
+'display the form
+Gui.F_WC..Visible(true)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.Debug.SetLA(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+
+Program.Sub.RefreshCheck.Start
+F.Intrinsic.Control.SetErrorHandler("RefreshCheck_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+''check the copy that was made for the details UDT
+'F.Intrinsic.Variable.UDTCopy(V.uGlobal.uDETAILS,V.uGlobal.uDETAILScopy,False)
+
+F.Intrinsic.Control.If(V.Global.iRefreshCount,=,1)
+	V.uGlobal.uDetailsCopy.Redim(0,0)
+	F.Intrinsic.Variable.UDTCopy(V.uGlobal.uDETAILS,V.uGlobal.uDetailsCopy,False)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("RefreshCheck_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_3946_DISPATCH_LIST_INFO.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.RefreshCheck.End
+
+Program.Sub.GlobalQuery.Start
+F.Intrinsic.Control.SetErrorHandler("GlobalQuery_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.stylerquery.Declare(String)
+V.Local.stylerquery2.Declare(String)
+V.Local.stylerquery3.Declare(String)
+V.Local.stylerquery4.Declare(String)
+V.Local.sWorkcenter.Declare(String)
+V.global.stylerfinal.Declare(String)
+
+F.Intrinsic.String.Concat("SELECT APSV3_JBLines.Job, APSV3_JBLines.Sfx, APSV3_JBLines.Seq, APSV3_JBLines.SeqRes, APSV3_JBMaster.Description,","APSV3_JBMaster.Part,APSV3_JBMaster.CustName,APSV3_JBMaster.CustNo,APSV3_JBMaster.DueDate,APSV3_JBMaster.Priority,",V.local.stylerquery)
+F.Intrinsic.String.Concat("APSV3_JBLines.StartDate  as SchedStart, APSV3_JBLines.DueDate as SchedEnd, APSV3_JBLines.ComplDate from APSV3_JBLines","JOIN APSV3_JBMaster ON APSV3_JBLines.JOB = APSV3_JBMaster.JOB and APSV3_JBLines.SFX = APSV3_JBMaster.SFX where",V.Local.stylerquery2)
+F.Intrinsic.String.Concat("APSV3_JBLines.ComplDate","is null and APSV3_JBLines.SeqType = 1",V.Local.stylerquery3)
+F.Intrinsic.String.Concat("AND APSV3_JBLines.SeqRes = '",V.Local.sWorkcenter,"' ORDER BY APSV3_JBLines.StartDate, APSV3_JBLines.DueDate, APSV3_JBLines.Job, APSV3_JBLines.Sfx, APSV3_JBLines.Seq",V.Local.stylerquery4)
+
+F.Intrinsic.String.Build("{0}{1}{2}{3}{4},v.Local.stylerquery,v.Local.stylerquery2",V.Local.stylerquery3,V.Local.stylerquery4,V.global.stylerfinal)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("GlobalQuery_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_DISPATCH_LIST_INFO_REV.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.GlobalQuery.End
+
+program.sub.disablechk_click.start
+F.Intrinsic.Control.SetErrorHandler("disablechk_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_WC!DisableChk.Value,=,1)
+	'disables the timer
+	Gui.F_WC.timer2.enabled(false)
+F.Intrinsic.Control.ElseIf(V.Screen.F_WC!DisableChk.Value,=,0)
+	'enables the timer
+	Gui.F_WC.timer2.enabled(true)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("disablechk_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_DISPATCH_LIST_INFO_REV.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.disablechk_click.end
+
+Program.Sub.Seq_ready.Start
+V.Local.sQuery.Declare(String)
+V.Local.bReady.Declare(Boolean)
+V.Local.iUDTCount.Declare(Long)
+
+V.Local.sflagged.Declare(String)
+
+'grab our passed variable UDT from callsub line and set it to our local udt count. this allows us to pull the specific udt element number that we are on from the called sub
+V.Local.iUDTCount.Set(V.Args.UDT)
+V.Local.i.Declare(Long)
+V.Local.ssql.Declare(String)
+
+'This query checks for the last previous sequence that was completed, ignore comment sequence LMO <> C
+'F.Intrinsic.String.Build("Select Top 1 Flag_Closed From V_JOB_OPerations Where LMO <> 'C' And Seq < '{0}' And Job = '{1}' And Suffix = '{2}' Order By Seq Desc",V.uGlobal.uDETAILS(v.Local.iUDTCount)!SEQUENCE,V.uGlobal.uDETAILS(v.Local.iUDTCount)!JOB,V.uGlobal.uDETAILS(v.Local.iUDTCount)!SUFFIX,V.Local.sQuery)
+F.Intrinsic.String.Build("Select * from V_JOB_OPERATIONS where LMO <> 'C' and SEQ < '{0}' and JOB = '{1}' and SUFFIX = '{2}'",V.uGlobal.uDETAILS(v.Local.iUDTCount)!SEQUENCE,V.uGlobal.uDETAILS(v.Local.iUDTCount)!JOB,V.uGlobal.uDETAILS(v.Local.iUDTCount)!SUFFIX,V.Local.ssql)
+
+F.ODBC.Connection!Conx.openlocalrecordsetRO("Rstfirst",V.Local.ssql)
+
+F.Intrinsic.Control.If(V.ODBC.Conx!Rstfirst.EOF,<>,True)
+	
+	'take off the top 1 and select
+	F.Intrinsic.String.Build("Select Flag_Closed From V_JOB_OPerations Where LMO <> 'C' And Seq < '{0}' And Job = '{1}' And Suffix = '{2}' Order By Seq",V.uGlobal.uDETAILS(v.Local.iUDTCount)!SEQUENCE,V.uGlobal.uDETAILS(v.Local.iUDTCount)!JOB,V.uGlobal.uDETAILS(v.Local.iUDTCount)!SUFFIX,V.Local.sQuery)
+	F.ODBC.Connection!Conx.OpenLocalRecordsetRO("rstCheck",V.Local.sQuery)
+	F.Intrinsic.Control.If(V.ODBC.Conx!rstCheck.EOF,<>,True)
+
+		'loop through the recordset for each job prior to the one currently on to see if flag_closed is = Y
+		F.Intrinsic.Control.DoUntil(V.ODBC.Conx!rstCheck.EOF,=,True)
+			V.Local.sflagged.Set(V.ODBC.Conx!rstCheck.FieldValTrim!FLAG_CLOSED)
+			F.Intrinsic.Control.If(V.Local.sflagged,=,"N")
+				V.Local.bReady.Set(False)
+				F.Intrinsic.Control.ExitDo
+			F.Intrinsic.Control.ElseIf(V.Local.sflagged,=,"")
+				V.Local.bready.Set(False)
+				F.Intrinsic.Control.ExitDo
+			F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.sflagged,=,"Y")
+			V.Local.bReady.Set(True)
+		F.Intrinsic.Control.EndIf
+		
+			F.ODBC.Conx!rstCheck.MoveNext
+			F.Intrinsic.Control.Loop
+
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Else
+	V.Local.bReady.Set(True)
+F.Intrinsic.Control.EndIf
+
+'add return variable to be read by our other sub
+F.Intrinsic.Variable.AddRV("ready",V.Local.bReady)
+
+Program.Sub.Seq_ready.End
+
+program.sub.gsfg_djl_mousedown.start
+F.Intrinsic.Control.SetErrorHandler("gsfg_djl_mousedown_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.irow.Declare(Long)
+V.Local.icount.Declare(Long)
+V.Local.sret.Declare(String)
+
+V.Local.irow2.Declare(Long)
+V.Local.isort.Declare(Long)
+V.Local.ssort.Declare(String)
+V.Global.isort.Declare(String)
+
+
+'subtract the header and bottom blank row from the count
+F.Intrinsic.Math.Sub(V.Local.irow2,1,V.Local.irow2)
+
+F.Intrinsic.Control.For(V.local.isort,0,18,1)
+
+	'loop through the flexgrid and see if the first column has the word 'Active' in it if so make the cell green
+	Gui.F_WC.gsfg_DJL.GetTextMatrix(V.local.isort,0,V.Local.ssort)
+	F.Intrinsic.Control.If(V.Local.ssort,=,"Seq. Start")
+		Gui.F_WC.gsfg_DJL.SortColumn(V.Local.isort,0)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Next(V.Local.isort)
+
+''subtract the header and bottom blank row from the count
+'F.Intrinsic.Math.Sub(V.Local.irow2,1,V.Local.irow2)
+'
+'V.Local.isort.Set(0)
+'
+'F.Intrinsic.Math.Add(V.global.isort,1,V.global.isort)
+'F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uDETAILS!SEQ_START,True)
+'F.Intrinsic.Control.CallSub(Btnrefresh_click)
+'
+'F.Intrinsic.Control.GoTo(V.Global.isort)
+'
+''
+'F.Intrinsic.Control.For(V.local.isort,0,19,1)
+'	'check to see if "Seq. Start" is a column if so allow for sorting when the user clicks within the flexgrid
+'	Gui.F_WC.gsfg_DJL.GetTextMatrix(V.local.isort,0,V.Local.ssort)
+'	F.Intrinsic.Control.If(V.Local.ssort,=,"Seq. Start")
+'
+'		F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uDETAILS!SEQ_START,True)
+'		F.Intrinsic.Control.CallSub(Btnrefresh_click)
+'		Gui.F_WC.gsfg_DJL.SortColumn(V.Local.isort,0)
+'	F.Intrinsic.Control.EndIf
+'
+'F.Intrinsic.Control.Next(V.Local.isort)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfg_djl_mousedown_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_DISPATCH_LIST_INFO_REV.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.gsfg_djl_mousedown.end
+
+program.sub.gsfg_djl_mouseup.start
+F.Intrinsic.Control.SetErrorHandler("gsfg_djl_mouseup_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gsfg_djl_mouseup_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_DISPATCH_LIST_INFO_REV.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_wc_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.gsfg_djl_mouseup.end
+
+Program.Sub.Comments.Start
+${$0$}$GCG_DISPATCH_LIST_INFO$}$TSP$}$4/14/2015
+Program.Sub.Comments.End
+
